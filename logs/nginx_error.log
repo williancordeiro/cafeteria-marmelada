@@ -1,0 +1,21 @@
+2025/02/10 22:08:32 [error] 30460#30460: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: could not find driver in /var/www/willcoffee.com.br/app/todo_list.php:8
+Stack trace:
+#0 /var/www/willcoffee.com.br/app/todo_list.php(8): PDO->__construct()
+#1 {main}
+  thrown in /var/www/willcoffee.com.br/app/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/10 22:12:26 [error] 30466#30466: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: could not find driver in /var/www/willcoffee.com.br/app/todo_list.php:8
+Stack trace:
+#0 /var/www/willcoffee.com.br/app/todo_list.php(8): PDO->__construct()
+#1 {main}
+  thrown in /var/www/willcoffee.com.br/app/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/10 22:14:44 [error] 30467#30467: *7 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined variable $dbname in /var/www/willcoffee.com.br/app/todo_list.php on line 8PHP message: PHP Fatal error:  Uncaught PDOException: could not find driver in /var/www/willcoffee.com.br/app/todo_list.php:8
+Stack trace:
+#0 /var/www/willcoffee.com.br/app/todo_list.php(8): PDO->__construct()
+#1 {main}
+  thrown in /var/www/willcoffee.com.br/app/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/10 22:21:20 [error] 30464#30464: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: could not find driver in /var/www/willcoffee.com.br/app/todo_list.php:8
+Stack trace:
+#0 /var/www/willcoffee.com.br/app/todo_list.php(8): PDO->__construct()
+#1 {main}
+  thrown in /var/www/willcoffee.com.br/app/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/13 19:41:28 [error] 41440#41440: *1 open() "/var/www/willcoffee.com.br/app/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /favicon.ico HTTP/1.1", host: "www.willcoffee.com.br", referrer: "http://www.willcoffee.com.br/"
