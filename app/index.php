@@ -1,15 +1,16 @@
 <?php
-    require_once 'config/geral.php';
+require_once 'config/geral.php';
+require_once 'config/routers.php';
 
-    require_once 'config/routers.php';
+$request_uri = $_SERVER['REQUEST_URI'];
+$request_method = $_SERVER['REQUEST_METHOD'];
 
-    $request_uri = $_SERVER['REQUEST_URI'];
-    $request_method = $_SERVER['REQUEST_METHOD'];
-
-    if (isset($routers[$request_uri]) && isset($routers[$request_uri][$request_method])) {
-        include $routers[$request_uri][$request_method];
-        exit;
-    }
+if (isset($routers[$request_uri]) && isset($routers[$request_uri][$request_method])) {
+    require_once $routers[$request_uri][$request_method];
+    $controller = new ListController($dataBase);
+    $controller->list();
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

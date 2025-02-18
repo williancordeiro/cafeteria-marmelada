@@ -1,17 +1,26 @@
-<?php
-    $user = "will";
-    $password = "123456";
-    $database = "willcoffee";
-    $table = "todo_list";
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= URL_CSS . 'style.css' ?>">
+    <title><?= SITE_NAME ?></title>
+</head>
+<body>
+    <?php include VIEW_DIR . 'templates/header.php';?>
+    
+    <main class="blur">
+        <div class="item-list">
+            <?php
+                foreach ($items as $item):
+                    $name = $item['nome'];
+                    $image = $item['imagem'];
+                    include VIEW_DIR . 'template/itens.php';
+                endforeach;
+            ?>
+        </div>
+    </main>
 
-    try {
-        $db = new PDO ("mysql:host=localhost;dbname=$database", $user, $password);
-        echo "<h2>TODO LIST</h2><ol>";
-        foreach($db->query("SELECT content FROM $table") as $row) {
-            echo "<li>" . $row['content'] . "</li>";
-        }
-        echo "</ol>";
-    } catch (PDOExeption $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
-        die();
-    }
+    <?php include VIEW_DIR . 'templates/footer.php';?>
+</body>
+</html>

@@ -11,6 +11,10 @@ main {
     height: 100vh;
 }
 
+.blur {
+    filter: blur(10px);
+}
+
 a {
     font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif;
 }
@@ -133,4 +137,23 @@ footer {
 
 .instagram a:hover {
     color: rgb(165, 76, 192);
+}
+
+.item {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.item-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.item-nome {
+    font-size: 18px;
+    font-weight: bold;
 }
