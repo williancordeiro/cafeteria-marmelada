@@ -2,7 +2,6 @@
     const SITE_NAME = 'WILL COFFEE Cafeteria';
 
     const URL_RAIZ = '/';
-    const URL_LIST = URL_RAIZ . 'src/View/List/';
 
     define('RAIZ', dirname(__DIR__) . '/');
 

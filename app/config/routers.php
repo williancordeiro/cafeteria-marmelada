@@ -2,6 +2,6 @@
 
 $routers = [
     '/list' => [
-        'GET' => '\View\List\todo_list.php',
+        'GET' => VIEW_DIR . 'List/todo_list.php',
     ],
 ];
