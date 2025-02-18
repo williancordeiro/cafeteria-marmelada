@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= URL_CSS . 'style.lcss' ?>">
-    <title>Will Coffe</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div>
-                <a href="<?= URL_RAIZ ?>">ICONE</a>
-            </div>
-            <div>
-                <h2>WILL COFFE Cafeteria</h2>
-            </div>
-            <div>
-                <ol>
-                    <li>Menu</li>
-                    <li>Login</li>
-                    <li>Contato</li>
-                </ol>
-            </div>
-        </nav>
-    </header>
-</body>
-</html>
+<header>
+    <nav class="navbar">
+        <div>
+            <a class="icon" href="<?= URL_RAIZ ?>">☕</a>
+        </div>
+        <div>
+            <a class="site-name" href="<?= URL_RAIZ ?>"><?= SITE_NAME ?></a>
+        </div>
+        <div>
+            <ol class="menu">
+                <li><a href="<?= URL_RAIZ ?>">Menu</a></li>
+                <li><a href="<?= URL_RAIZ ?>">Login</a></li>
+                <li><a href="<?= URL_RAIZ . 'list' ?>">Lista</a></li>
+            </ol>
+        </div>
+    </nav>
+</header>

@@ -19,3 +19,106 @@ Stack trace:
 #1 {main}
   thrown in /var/www/willcoffee.com.br/app/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
 2025/02/13 19:41:28 [error] 41440#41440: *1 open() "/var/www/willcoffee.com.br/app/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /favicon.ico HTTP/1.1", host: "www.willcoffee.com.br", referrer: "http://www.willcoffee.com.br/"
+2025/02/17 19:51:58 [error] 3627#3627: *1 open() "/var/www/willcoffee.com.br/app/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /favicon.ico HTTP/1.1", host: "www.willcoffee.com.br", referrer: "http://www.willcoffee.com.br/"
+2025/02/17 20:11:58 [error] 7893#7893: *4 open() "/var/www/willcoffee.com.br/app/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /favicon.ico HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 20:23:33 [error] 8591#8591: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:35 [error] 8591#8591: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:45 [error] 10100#10100: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:45 [error] 10100#10100: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:46 [error] 10100#10100: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:46 [error] 10100#10100: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:23:46 [error] 10100#10100: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:27:00 [error] 10099#10099: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:27:00 [error] 10099#10099: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:27:01 [error] 10099#10099: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:27:15 [error] 10720#10720: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "VIEW_DIR" in /var/www/willcoffee.com.br/app/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:39:02 [error] 10718#10718: *17 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "SITE_NAME" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:41:19 [error] 10733#10733: *20 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "SITE_NAME" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:44:36 [error] 10723#10723: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "SITE_NAME" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:53:47 [error] 10719#10719: *31 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "URL_CSS" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:53:48 [error] 10719#10719: *31 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "URL_CSS" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:53:49 [error] 10719#10719: *31 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "URL_CSS" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 20:53:49 [error] 10719#10719: *31 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Undefined constant "URL_CSS" in /var/www/willcoffee.com.br/app/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br"
+2025/02/17 21:20:52 [error] 10719#10719: *48 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:21:47 [error] 10719#10719: *48 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:21:48 [error] 10719#10719: *48 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:23:44 [error] 10719#10719: *60 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:23:48 [error] 10719#10719: *60 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:28:47 [error] 10719#10719: *67 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app//public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:29:51 [error] 10719#10719: *67 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app//public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:30:11 [error] 21743#21743: *2 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app//public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:32:30 [error] 21744#21744: *5 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app//public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:33:31 [error] 21744#21744: *5 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:36:14 [error] 21748#21748: *10 open() "/var/www/willcoffee.com.br/app/willcoffee.com.br/apppublic/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /willcoffee.com.br/apppublic/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:36:39 [error] 21748#21748: *10 open() "/var/www/willcoffee.com.br/app/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:37:05 [error] 21748#21748: *10 open() "/var/www/willcoffee.com.br/app/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:37:57 [error] 21748#21748: *10 open() "/var/www/willcoffee.com.br/app/var/www/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /var/www/willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:38:26 [error] 21748#21748: *10 open() "/var/www/willcoffee.com.br/app/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 21:40:46 [error] 23858#23858: *2 open() "/var/www/willcoffee.com.br/app/willcoffee.com.br/app/public/css/style.css" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /willcoffee.com.br/app/public/css/style.css HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 22:17:27 [error] 23865#23865: *89 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: could not find driver in /var/www/willcoffee.com.br/app/src/View/List/todo_list.php:8
+Stack trace:
+#0 /var/www/willcoffee.com.br/app/src/View/List/todo_list.php(8): PDO->__construct()
+#1 {main}
+  thrown in /var/www/willcoffee.com.br/app/src/View/List/todo_list.php on line 8" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /src/View/List/todo_list.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 22:31:18 [error] 23854#23854: *102 open() "/var/www/willcoffee.com.br/app/list" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /list HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 22:39:34 [error] 23854#23854: *105 open() "/var/www/willcoffee.com.br/app/app/public/img/wallpaper-cafeteria.jpg" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /app/public/img/wallpaper-cafeteria.jpg HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/public/css/style.css"
+2025/02/17 22:42:02 [error] 23854#23854: *105 open() "/var/www/willcoffee.com.br/app/app/public/img/wallpaper-cafeteria.jpg" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /app/public/img/wallpaper-cafeteria.jpg HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/public/css/style.css"
+2025/02/17 22:42:47 [error] 23854#23854: *105 open() "/var/www/willcoffee.com.br/app/img/wallpaper-cafeteria.jpg" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /img/wallpaper-cafeteria.jpg HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/public/css/style.css"
+2025/02/17 22:51:43 [error] 23854#23854: *135 open() "/var/www/willcoffee.com.br/app/img/wallpaper-cafeteria.jpg" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /img/wallpaper-cafeteria.jpg HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/public/css/style.css"
+2025/02/17 22:56:04 [error] 37267#37267: *2 directory index of "/var/www/willcoffee.com.br/app/public/img/" is forbidden, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /public/img/ HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/public/css/style.css"
+2025/02/17 22:57:09 [error] 37267#37267: *2 open() "/var/www/willcoffee.com.br/app/list" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /list HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/17 23:14:26 [error] 37269#37269: *30 open() "/var/www/willcoffee.com.br/app/list" failed (2: No such file or directory), client: 127.0.0.1, server: willcoffee.com.br, request: "GET /list HTTP/1.1", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
