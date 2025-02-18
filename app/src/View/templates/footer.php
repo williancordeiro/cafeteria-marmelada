@@ -6,7 +6,7 @@
         </div>
         <div class="footer-column">
             <h3>Links Úteis</h3>
-            <ul>
+            <ul class="link-util">
                 <li><a href="<?= URL_RAIZ ?>">Home</a></li>
                 <li><a href="<?= URL_RAIZ . 'list' ?>">Lista</a></li>
                 <li><a href="<?= URL_RAIZ ?>">Contato</a></li>
@@ -15,9 +15,9 @@
         <div class="footer-column">
             <h3>Redes Sociais</h3>
             <ul>
-                <li><a href="<?= URL_RAIZ ?>">🔵</a></li>
-                <li><a href="<?= URL_RAIZ ?>">⚫</a></li>
-                <li><a href="<?= URL_RAIZ ?>">🟣</a></li>
+                <li class="facebook" ><a href="<?= URL_RAIZ ?>">🔵 Facebook</a></li>
+                <li class="twitter"><a href="<?= URL_RAIZ ?>">⚫ Twitter</a></li>
+                <li class="instagram"><a href="<?= URL_RAIZ ?>">🟣 Instagram</a></li>
             </ul>
         </div>
     </div>
