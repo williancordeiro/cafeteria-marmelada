@@ -1,11 +1,11 @@
 <?php
-
-require_once MODEL_DIR . 'ListModel.php';
+require_once 'config/geral.php';
+require_once 'src/Model/ListModel.php';
 
 class ListController {
     private $model;
 
-    public function __contructor($dataBase) {
+    public function __construct($dataBase) {
         $this->model = new ListModel($dataBase);
     }
 

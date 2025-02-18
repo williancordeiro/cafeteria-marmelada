@@ -1,4 +1,6 @@
-<div class="item">
-    <img src="<?= htmlspecialchars($imagem) ?>" alt="<?= htmlspecialchars($nome) ?>" class="item-img">
-    <p class="item-nome"><?= htmlspecialchars($nome) ?></p>
+<div class="card-item">
+    <div class="item-content">
+        <img src="<?= $imagem ?>" alt="<?= $nome ?>" class="item-img">
+        <p class="item-description"><?= $nome ?></p>
+    </div>
 </div>

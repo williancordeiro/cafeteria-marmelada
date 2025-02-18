@@ -1,3 +1,7 @@
+<?php
+    require_once 'config/geral.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,17 +13,17 @@
 <body>
     <?php include VIEW_DIR . 'templates/header.php';?>
     
-    <main class="blur">
-        <div class="item-list">
-            <?php
-                foreach ($items as $item):
-                    $name = $item['nome'];
-                    $image = $item['imagem'];
-                    include VIEW_DIR . 'template/itens.php';
-                endforeach;
-            ?>
+    <main class="item-list">
+        <div class="item">
+            <?php foreach ($items as $item) : ?>
+                <?php
+                    $imagem = $item['imagem'];
+                    $nome = $item['content'];
+                    include VIEW_DIR . 'templates/itens.php';
+                ?>
+            <?php endforeach; ?>
         </div>
-    </main>
+            </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
 </body>

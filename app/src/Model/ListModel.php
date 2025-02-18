@@ -1,11 +1,10 @@
 <?php
-
-require_once CONFIG_DIR . 'data-base.php';
+require_once 'config/data-base.php';
 
 class ListModel {
     private $db;
 
-    public function __contructor($database) {
+    public function __construct($dataBase) {
         $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
         $option = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -20,7 +19,7 @@ class ListModel {
     }
 
     public function getTodoList() {
-        $stmt = $this->db->query("SELECT item_id, content AS nome FROM todo_list");
+        $stmt = $this->db->query("SELECT item_id, content FROM todo_list");
         return $stmt->fetchAll();
     }
 }
