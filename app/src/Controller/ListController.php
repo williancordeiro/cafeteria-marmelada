@@ -12,9 +12,9 @@ class ListController {
     public function list() {
         $items = $this->model->getTodoList();
 
-        foreach ($items as &$item) {
+        foreach ($items as $item) {
             $item_id = $item['item_id'];
-            $item_img = URL_IMG . 'itens/{$item_id}.jpg';
+            $item_img = "public/img/itens/{$item_id}.png";
 
             if (file_exists($item_img)) {
                 $item['imagem'] = $item_img;

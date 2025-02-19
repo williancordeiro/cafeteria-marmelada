@@ -19,7 +19,7 @@ class ListModel {
     }
 
     public function getTodoList() {
-        $stmt = $this->db->query("SELECT item_id, content FROM todo_list");
+        $stmt = $this->db->query("SELECT item_id, content FROM todo_list ORDER BY item_id ASC");
         return $stmt->fetchAll();
     }
 }

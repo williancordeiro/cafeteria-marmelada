@@ -23,7 +23,7 @@
                 ?>
             <?php endforeach; ?>
         </div>
-            </main>
+    </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
 </body>
