@@ -143,7 +143,7 @@ footer {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 120px 20px;
+    padding: 140px 20px;
     box-sizing: border-box;
 }
 
@@ -178,7 +178,7 @@ footer {
 .item-img {
     background-color: #ffffff;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 30%;
     width: 80px;
     height: 80px;
     object-fit: contain;

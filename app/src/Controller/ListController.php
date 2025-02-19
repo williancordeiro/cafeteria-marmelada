@@ -12,7 +12,7 @@ class ListController {
     public function list() {
         $items = $this->model->getTodoList();
 
-        foreach ($items as $item) {
+        foreach ($items as &$item) {
             $item_id = $item['item_id'];
             $item_img = "public/img/itens/{$item_id}.png";
 
@@ -22,6 +22,7 @@ class ListController {
                 $item['imagem'] = URL_IMG . 'itens/default.png';
             }
         }
+        unset($item);
 
         require VIEW_DIR . 'List/todo_list.php';
     }
