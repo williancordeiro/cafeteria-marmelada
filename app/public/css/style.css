@@ -143,13 +143,13 @@ footer {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 140px 20px;
+    padding: 100px 20px;
     box-sizing: border-box;
 }
 
 .item {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     max-width: 1200px;
     width: 100%;
@@ -162,6 +162,11 @@ footer {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.103);
     transition: transform 0.2s;
     overflow: hidden;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-item:hover {
@@ -172,7 +177,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
+    height: 100%;
 }
 
 .item-img {
