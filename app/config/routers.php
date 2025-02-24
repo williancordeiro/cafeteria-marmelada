@@ -10,7 +10,12 @@ $routers = [
     ],
 
     '/login' => [
-        'GET' => CONTROLLER_DIR . 'LoginController.php',
+        'GET' => CONTROLLER_DIR . 'LoginController.php?method=index',
+    ],
+
+    '/register' => [
+        'GET' => CONTROLLER_DIR . 'RegisterController.php',
+        'POST' => CONTROLLER_DIR . 'RegisterController.php?method=register',
     ],
 
     '/404' => [
