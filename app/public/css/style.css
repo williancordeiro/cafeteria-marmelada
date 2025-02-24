@@ -11,6 +11,10 @@ main {
     height: 100vh;
 }
 
+.form {
+    padding-top: 100px;
+}
+
 .blur {
     filter: blur(10px);
 }

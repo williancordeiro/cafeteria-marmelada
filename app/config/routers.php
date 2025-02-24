@@ -14,7 +14,7 @@ $routers = [
     ],
 
     '/register' => [
-        'GET' => CONTROLLER_DIR . 'RegisterController.php',
+        'GET' => CONTROLLER_DIR . 'RegisterController.php?method=index',
         'POST' => CONTROLLER_DIR . 'RegisterController.php?method=register',
     ],
 

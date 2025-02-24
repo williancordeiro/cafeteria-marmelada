@@ -1,4 +1,4 @@
-<form action="<?= URL_RAIZ . 'register' ?>" method="post">
+<form action="<?= URL_RAIZ . 'register' ?>" method="post" class="form">
     <div>
         <label for="name">Nome:</label>
         <input type="text" name="name" id="name" autofocus>
