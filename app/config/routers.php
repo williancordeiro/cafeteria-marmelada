@@ -11,6 +11,7 @@ $routers = [
 
     '/login' => [
         'GET' => CONTROLLER_DIR . 'LoginController.php?method=index',
+        'POST' => CONTROLLER_DIR . 'LoginController.php?method=login',
     ],
 
     '/register' => [

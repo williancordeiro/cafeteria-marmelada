@@ -522,3 +522,27 @@ Stack trace:
 #2 {main}
   thrown in /var/www/willcoffee.com.br/app/src/Controller/Controller.php on line 21" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
 2025/02/24 19:38:46 [error] 375#375: *188 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key 1 in /var/www/willcoffee.com.br/app/src/Controller/Controller.php on line 12" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
+2025/02/24 19:54:03 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /register HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
+2025/02/24 19:54:05 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET /list HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/"
+2025/02/24 19:54:06 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
+2025/02/24 19:54:07 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
+2025/02/24 19:54:34 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
+2025/02/24 19:54:35 [error] 365#365: *242 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Controller" not found in /var/www/willcoffee.com.br/app/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/willcoffee.com.br/app/index.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: willcoffee.com.br, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php8.1-fpm.sock:", host: "www.willcoffee.com.br", referrer: "https://www.willcoffee.com.br/list"
