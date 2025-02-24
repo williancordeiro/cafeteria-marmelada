@@ -7,21 +7,27 @@ use \PDO;
 
 class UserModel {
     
-    const INSERT_USER = 'INSERT INTO users(email, password) VALUES (?, ?)';
+    const INSERT_USER = 'INSERT INTO users(email, password, name) VALUES (?, ?, ?)';
 
+    private $name;
     private $email;
     private $password;
     private $passwordHash;
 
-    public function __construct($email, $passwordHash) {
+    public function __construct($email, $passwordHash, $name) {
         $this->email = $email;
         $this->passwordHash = $passwordHash;
         if ($passwordHash != null)
             $this->password = password_hash($passwordHash, PASSWORD_BCRYPT);
+        $htis->name = $name;
     }
 
     public function getEmail() {
         return $this->email;
+    }
+
+    public function getName() {
+        return $this->name;
     }
 
     public function verifyPass($passwordHash) {
@@ -36,6 +42,7 @@ class UserModel {
         $stmt = $pdo->prepare(INSERT_USER);
         $stmt->bindParam('email', $email);
         $stmt->bindParam('password', $passwordHash);
+        $stmt->bindParam('name', $name);
     }
 }
 

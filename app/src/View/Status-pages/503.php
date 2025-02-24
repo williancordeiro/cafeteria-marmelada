@@ -11,10 +11,17 @@ require_once 'config/geral.php';
     <title><?= SITE_NAME ?></title>
 </head>
 <body>
-    <?php include VIEW_DIR . 'templates/login-header.php';?>
+    <?php include VIEW_DIR . 'templates/header.php';?>
 
-    <main>
-        
+    <main class="page-error">
+        <div class="error-principal">
+            <div class="error-code">
+                <h1>Erro 503</h1>
+            </div>
+            <div class="error-message">
+                <h3>Site em manuteção! Retorne mais tarde!</h3>
+            </div>
+        </div>
     </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>

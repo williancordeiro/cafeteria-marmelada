@@ -14,12 +14,12 @@ require_once 'config/geral.php';
     <?php include VIEW_DIR . 'templates/header.php';?>
 
     <main class="page-error">
-        <div class="error_principal">
+        <div class="error-principal">
             <div class="error-code">
-                <h1>404</h1>
+                <h1>Erro 404</h1>
             </div>
             <div class="error-message">
-                <h3>Pagina não encontrada! <a href="<?= URL_RAIZ ?>">retornar</a></h3>
+                <h3>Pagina não encontrada!  <a href="<?= URL_RAIZ ?>">retornar</a></h3>
             </div>
         </div>
     </main>
