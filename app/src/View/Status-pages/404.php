@@ -13,9 +13,15 @@ require_once 'config/geral.php';
 <body>
     <?php include VIEW_DIR . 'templates/header.php';?>
 
-    <main class="container blur">
-        <h1>404</h1>
-        <h3>Pagina não encontrada! <a href="<?= URL_RAIZ ?>">retornar</a></h3>
+    <main class="page-error">
+        <div class="error_principal">
+            <div class="error-code">
+                <h1>404</h1>
+            </div>
+            <div class="error-message">
+                <h3>Pagina não encontrada! <a href="<?= URL_RAIZ ?>">retornar</a></h3>
+            </div>
+        </div>
     </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
