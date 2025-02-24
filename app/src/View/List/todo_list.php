@@ -11,7 +11,7 @@
     <title><?= SITE_NAME ?></title>
 </head>
 <body>
-    <?php include VIEW_DIR . 'templates/header.php';?>
+    <!-- <?php include_once VIEW_DIR . 'templates/header.php';?> -->
     
     <main class="item-list">
         <div class="item">
