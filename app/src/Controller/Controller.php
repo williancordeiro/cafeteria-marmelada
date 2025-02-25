@@ -1,6 +1,8 @@
 <?php
 require_once 'config/geral.php';
 
+use \ReflectionClass;
+
 class Controller {
 
     public function handleRequest($uri, $method) {

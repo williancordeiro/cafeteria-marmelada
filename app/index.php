@@ -8,7 +8,6 @@ $request_method = $_SERVER['REQUEST_METHOD'];
 
 $controller = new Controller();
 if ($request_uri === '/' && $request_method === 'GET') {
-    // Carrega o index apenas se for a rota principal
     ?>
     <!DOCTYPE html>
     <html lang="pt-br">

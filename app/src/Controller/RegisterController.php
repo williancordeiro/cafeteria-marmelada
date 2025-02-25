@@ -2,6 +2,8 @@
 require_once 'config/geral.php';
 require_once MODEL_DIR . 'UserModel.php';
 
+use \Model\UserModel;
+
 class RegisterController {
 
     public function index() {
@@ -20,12 +22,13 @@ class RegisterController {
             return;
         }
 
-        if (empty($password)) {
-            echo "A senha não pode ser vazia";
-            return;
-        }
+        $user = new UserModel($name, $email, $password);
 
-        $user = new UserModel($email, $password, $name);
+        if ($user->save()) {
+            echo "Usuário cadastrado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar usuário.";
+        }
     }
 }
 ?>

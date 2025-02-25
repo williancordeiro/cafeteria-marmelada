@@ -1,4 +1,7 @@
 <?php
+namespace Model;
+
+use \PDO;
 require_once 'config/data-base.php';
 
 class ListModel {

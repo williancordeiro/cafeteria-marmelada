@@ -1,6 +1,8 @@
 <?php
 require_once 'config/geral.php';
-require_once 'src/Model/ListModel.php';
+require_once MODEL_DIR . 'ListModel.php';
+
+use \Model\ListModel;
 
 class ListController {
     private $model;
@@ -9,7 +11,7 @@ class ListController {
         $this->model = new ListModel($dataBase);
     }
 
-    public function list() {
+    public function getList() {
         $items = $this->model->getTodoList();
 
         foreach ($items as &$item) {

@@ -6,7 +6,7 @@ $routers = [
     ],
 
     '/list' => [
-        'GET' => CONTROLLER_DIR . 'ListController.php?method=list',
+        'GET' => CONTROLLER_DIR . 'ListController.php?method=getList',
     ],
 
     '/login' => [
