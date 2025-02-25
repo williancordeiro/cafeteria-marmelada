@@ -19,6 +19,10 @@ $routers = [
         'POST' => CONTROLLER_DIR . 'RegisterController.php?method=register',
     ],
 
+    '/principal' => [
+        'GET' => CONTROLLER_DIR . 'PrincipalController.php?method=index',
+    ],
+
     '/404' => [
         'GET' => CONTROLLER_DIR . 'StatusController.php?method=error404',
     ],

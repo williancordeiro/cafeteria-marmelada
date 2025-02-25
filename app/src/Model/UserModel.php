@@ -75,6 +75,34 @@ class UserModel {
         }
     }
 
+    public static function getUserById($id) {
+        try {
+            $userModel = new self('', '', '', $id);
+            $conn = $userModel->db;
+
+            $command = $conn->prepare(self::SEARCH_ID);
+            $command->bindValue(1, $id, PDO::PARAM_STR);
+            $command->execute();
+
+            $register = $command->fetch(PDO::FETCH_ASSOC);
+            if ($register) {
+                $object = new self(
+                    $register['name'],
+                    $register['email'],
+                    null,
+                    $register['user_id']
+                );
+                $object->password = $register['password'];
+            }
+
+            return $object;
+
+        } catch (PDOException $e) {
+            error_log("Erro ao localizar usuário: " . $e->getMessage());
+            return false;
+        }
+    }
+
     public static function getUserByEmail($email) {
         try {
             $userModel = new self('', $email, '');
@@ -87,15 +115,16 @@ class UserModel {
             $register = $command->fetch(PDO::FETCH_ASSOC);
             if ($register) {
                 $object = new self(
-                    $register['name'],
                     $register['email'],
-                    $register['password'],
+                    '',
+                    null,
                     $register['user_id']
                 );
-                return $object;
+                $object->password = $register['password'];
             }
 
-            return true;
+            return $object;
+
         } catch (PDOException $e) {
             error_log("Erro ao localizar usuário: " . $e->getMessage());
             return false;

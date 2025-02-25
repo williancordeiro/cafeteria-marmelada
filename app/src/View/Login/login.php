@@ -1,5 +1,8 @@
 <?php
 require_once 'config/geral.php';
+session_start();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +20,12 @@ require_once 'config/geral.php';
     <main class="container">
         <div class="form-container">
             <div class="form-text" >
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo '<p style="color: red;">' . $_SESSION['error'] . '</p>';
+                        unset($_SESSION['error']);
+                    }
+                ?>
                 <h1>☕</h1>
                 <h3>Entrar</h3>
             </div>

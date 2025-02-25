@@ -5,6 +5,8 @@ use \ReflectionClass;
 
 class Controller {
 
+    protected $user;
+
     public function handleRequest($uri, $method) {
         
         global $routers;

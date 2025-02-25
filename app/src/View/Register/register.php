@@ -2,11 +2,6 @@
 require_once 'config/geral.php';
 
 session_start();
-
-if (isset($_SESSION['error'])) {
-    echo "<script>alert('" . $_SESSION['error'] . "');</script>";
-    unset($_SESSION['error']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +17,12 @@ if (isset($_SESSION['error'])) {
     <?php include VIEW_DIR . 'templates/header.php';?>
 
     <main class="container">
+        <?php
+            if (isset($_SESSION['error'])) {
+                echo "<script>alert('" . $_SESSION['error'] . "');</script>";
+                unset($_SESSION['error']);
+            }
+        ?>
         <div class="form-container">
             <div class="form-text" >
                 <h1>☕</h1>
