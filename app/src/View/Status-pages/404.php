@@ -19,7 +19,7 @@ require_once 'config/geral.php';
                 <h1>Erro 404</h1>
             </div>
             <div class="error-message">
-                <h3>Pagina não encontrada!  <a href="<?= URL_RAIZ ?>">retornar</a></h3>
+                <h3>Pagina não encontrada!  <a class="link" href="<?= URL_RAIZ ?>">retornar</a></h3>
             </div>
         </div>
     </main>
