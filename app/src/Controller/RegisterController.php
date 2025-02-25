@@ -11,6 +11,9 @@ class RegisterController {
     }
 
     public function register() {
+
+        session_start();
+
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = trim($_POST['name']);
             $email = trim($_POST['email']);
@@ -18,16 +21,23 @@ class RegisterController {
         }
 
         if (empty($name) || empty($email) || empty($password)) {
-            echo "Campos obrigatórios";
-            return;
+            // echo "Campos Obrigatórios";
+            $_SESSION['error'] = "Campos obrigatórios";
+            header('Location: ' . URL_RAIZ . 'register');
+            exit();
         }
 
         $user = new UserModel($name, $email, $password);
 
         if ($user->save()) {
-            echo "Usuário cadastrado com sucesso!";
+            // echo "Usuário cadastrado com sucesso! Redirecionando...";
+            header('Location: ' . URL_RAIZ . 'login');
+            exit();
         } else {
-            echo "Erro ao cadastrar usuário.";
+            // echo "Erro ao salvar usuário no banco de dados.";
+            $_SESSION['error'] = "Erro ao cadastrar usuário.";
+            header('Location: ' . URL_RAIZ . 'register');
+            exit();
         }
     }
 }

@@ -11,6 +11,8 @@
 
     const CONTROLLER_DIR = MVC_DIR . 'Controller/';
 
+    const DATABASE_DIR = MVC_DIR . 'DataBase/';
+
     const MODEL_DIR = MVC_DIR . 'Model/';
 
     const VIEW_DIR = MVC_DIR . 'View/';

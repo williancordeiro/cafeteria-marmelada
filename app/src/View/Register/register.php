@@ -1,5 +1,12 @@
 <?php
 require_once 'config/geral.php';
+
+session_start();
+
+if (isset($_SESSION['error'])) {
+    echo "<script>alert('" . $_SESSION['error'] . "');</script>";
+    unset($_SESSION['error']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +25,11 @@ require_once 'config/geral.php';
         <div class="form-container">
             <div class="form-text" >
                 <h1>☕</h1>
-                <h3>Cadastre-se</h3>
+                <h3>Cadastrar-se</h3>
             </div>
             <?php include VIEW_DIR . 'templates/register-form.php';?>
             <div class="form-text">
-                <p>Ja tem cadastro? Faça <a class="link" href="<?= URL_RAIZ . 'login' ?>">Login</a></p>
+                <p>Já possui cadastro? <a class="link" href="<?= URL_RAIZ . 'login' ?>"> Entrar </a></p>
             </div>
         </div>
     </main>

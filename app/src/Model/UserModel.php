@@ -2,12 +2,13 @@
 namespace Model;
 
 require_once 'config/data-base.php';
-require_once 'config/geral.php';
+require_once DATABASE_DIR . 'DataBase.php';
 
-var_dump($dataBase);
+// var_dump($dataBase);
 
 use \PDO;
 use \PDOException;
+use DataBase\DataBase;
 
 class UserModel {
     
@@ -34,19 +35,9 @@ class UserModel {
     }
 
     private function connect() {
-        global $dataBase;
-
-        $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
-        $option = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ];
-
-        try {
-            $this->db = new PDO($dsn, $dataBase['user'], $dataBase['password'], $option);
-        } catch (PDOException $e) {
-            die("Erro ao conectar com o banco de dados: " . $e->getMessage());
-        }
+        $db = new DataBase();
+        $db->startConnection();
+        $this->db = $db->getConnection();
     }
 
     public function getId() {
@@ -66,24 +57,47 @@ class UserModel {
     }
 
     public function save() {
-        $this->insert();
+        return $this->insert();
     }
 
     private function insert() {
         try {
-            $stmt = $this->db->query("SELECT MAX(user_id) AS last_id FROM users");
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            $nextId = $result['last_id'] ? $result['last_id'] + 1 : 1;
-
             $stmt = $this->db->prepare(self::INSERT_USER);
-            $stmt->bindParam(':email', $this->name);
-            $stmt->bindParam(':password', $this->email);
-            $stmt->bindParam(':name', $this->password);
+            $stmt->bindValue(1, $this->name);
+            $stmt->bindValue(2, $this->email);
+            $stmt->bindValue(3, $this->password);
 
             $stmt->execute();
+            return true;
         } catch (PDOException $e) {
             error_log("Usuário não Cadastrado: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public static function getUserByEmail($email) {
+        try {
+            $userModel = new self('', $email, '');
+            $conn = $userModel->db;
+
+            $command = $conn->prepare(self::SEARCH_EMAIL);
+            $command->bindValue(1, $email, PDO::PARAM_STR);
+            $command->execute();
+
+            $register = $command->fetch(PDO::FETCH_ASSOC);
+            if ($register) {
+                $object = new self(
+                    $register['name'],
+                    $register['email'],
+                    $register['password'],
+                    $register['user_id']
+                );
+                return $object;
+            }
+
+            return true;
+        } catch (PDOException $e) {
+            error_log("Erro ao localizar usuário: " . $e->getMessage());
             return false;
         }
     }

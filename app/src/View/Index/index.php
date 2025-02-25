@@ -1,3 +1,3 @@
-<main>
+<main class="index container">
     
 </main> 
