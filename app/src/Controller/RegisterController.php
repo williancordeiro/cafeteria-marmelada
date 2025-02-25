@@ -1,7 +1,6 @@
 <?php
 require_once 'config/geral.php';
-
-use \Model\UserModel;
+require_once MODEL_DIR . 'UserModel.php';
 
 class RegisterController {
 
@@ -22,11 +21,6 @@ class RegisterController {
         }
 
         $user = new UserModel($email, $password, $name);
-
-        if ($user->insert())
-            echo "Usuário cadastrado";
-        else
-            echo "Problemas ao cadastrar usuário!";
     }
 }
 ?>

@@ -11,7 +11,7 @@
         <label for="password">Senha:</label>
         <input type="password" name="password" id="password">
     </div>
-    <div class="form-group">
+    <div class="form-group btn">
         <button type="submit">Cadastrar-se</button>
     </div>
 </form>

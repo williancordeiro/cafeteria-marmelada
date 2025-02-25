@@ -1,9 +1,7 @@
 <?php
 
 require_once 'config/geral.php';
-require_once 'config/data-base.php';
-
-use \PDO;
+require_once CONFIG_DIR . 'data-base.php';
 
 class UserModel {
     
@@ -20,6 +18,8 @@ class UserModel {
         if ($passwordHash != null)
             $this->password = password_hash($passwordHash, PASSWORD_BCRYPT);
         $this->name = $name;
+
+        $this->insert();
     }
 
     public function getEmail() {
@@ -35,14 +35,23 @@ class UserModel {
     }
 
     private function insert() {
-        $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
-        $pdo = new PDO($dsn, $dataBase['user'], $dataBase['password']);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        global $dataBase;
 
-        $stmt = $pdo->prepare(self::INSERT_USER);
-        $stmt->bindParam('email', $this->email);
-        $stmt->bindParam('password', $this->passwordHash);
-        $stmt->bindParam('name', $this->name);
+        try {
+            $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
+            $pdo = new PDO($dsn, $dataBase['user'], $dataBase['password']);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $pdo->prepare(self::INSERT_USER);
+            $stmt->bindParam('email', $this->email);
+            $stmt->bindParam('password', $this->password);
+            $stmt->bindParam('name', $this->name);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            error_log("Erro ao cadastrar usuário: " . $e->getMessage());
+            return false;
+        }
     }
 }
 

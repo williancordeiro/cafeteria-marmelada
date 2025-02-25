@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow: auto;
 }
 
 main {
@@ -95,6 +96,10 @@ main {
 
 .link:hover {
     color: #8a6d2f
+}
+
+.btn {
+    margin-top: 20px;
 }
 
 .blur {
