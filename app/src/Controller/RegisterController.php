@@ -20,6 +20,11 @@ class RegisterController {
             return;
         }
 
+        if (empty($password)) {
+            echo "A senha não pode ser vazia";
+            return;
+        }
+
         $user = new UserModel($email, $password, $name);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 require_once 'config/geral.php';
-require_once CONFIG_DIR . 'data-base.php';
+require_once 'config/data-base.php';
 
 class UserModel {
     
@@ -37,12 +37,16 @@ class UserModel {
     private function insert() {
         global $dataBase;
 
-        try {
-            $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
-            $pdo = new PDO($dsn, $dataBase['user'], $dataBase['password']);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
+        $option = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ];
 
-            $stmt = $pdo->prepare(self::INSERT_USER);
+        try {
+            $this->db = new PDO($dsn, $dataBase['user'], $dataBase['password'], $option);
+
+            $stmt = $this->db->prepare(self::INSERT_USER);
             $stmt->bindParam('email', $this->email);
             $stmt->bindParam('password', $this->password);
             $stmt->bindParam('name', $this->name);
@@ -52,6 +56,22 @@ class UserModel {
             error_log("Erro ao cadastrar usuário: " . $e->getMessage());
             return false;
         }
+
+        // try {
+        //     $dsn = "{$dataBase['driver']}:host={$dataBase['server']};port={$dataBase['port']};dbname={$dataBase['base']}";
+        //     $pdo = new PDO($dsn, $dataBase['user'], $dataBase['password']);
+        //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        //     $stmt = $pdo->prepare(self::INSERT_USER);
+        //     $stmt->bindParam('email', $this->email);
+        //     $stmt->bindParam('password', $this->password);
+        //     $stmt->bindParam('name', $this->name);
+
+        //     return $stmt->execute();
+        // } catch (PDOException $e) {
+        //     error_log("Erro ao cadastrar usuário: " . $e->getMessage());
+        //     return false;
+        // }
     }
 }
 
