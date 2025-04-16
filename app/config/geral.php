@@ -1,5 +1,5 @@
 <?php
-    const SITE_NAME = 'WILL COFFEE Cafeteria';
+    const SITE_NAME = 'Cafeteria MARMELADA';
 
     const URL_RAIZ = '/';
 
