@@ -11,5 +11,6 @@ use \PDOException;
 use DataBase\DataBase;
 
 class ItemModel {
+    const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ?';
     
 }

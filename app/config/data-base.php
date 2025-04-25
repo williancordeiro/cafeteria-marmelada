@@ -1,10 +1,10 @@
 <?php
 
 $dataBase = [
-    'driver' => 'mysql',
-    'server' => 'localhost',
+    'driver' => 'mariadb',
+    'server' => '10.92.238.31',
     'port' => '3306',
-    'base' => 'willcoffee',
-    'user' => 'will',
-    'password' => '123456',
+    'base' => 'marmelada',
+    'user' => 'worker',
+    'password' => '****',
 ];
