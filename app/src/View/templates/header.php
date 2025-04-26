@@ -10,7 +10,6 @@
             <ol class="menu">
                 <li><a href="<?= URL_RAIZ . 'principal' ?>">Home</a></li>
                 <li><a href="<?= URL_RAIZ . 'login' ?>">Login</a></li>
-                <li><a href="<?= URL_RAIZ . 'list' ?>">Lista</a></li>
             </ol>
         </div>
     </nav>
