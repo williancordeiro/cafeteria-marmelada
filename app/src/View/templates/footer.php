@@ -2,7 +2,7 @@
     <div class="footer-main">
         <div class="footer-column">
             <h3>Sobre nós</h3>
-            <p>Will Coffe, cafeteria criada para os amantes de café e códigos . . .</p>
+            <p>Cafeteria Marmelada, cafeteria criada para os amantes de café e códigos . . .</p>
         </div>
         <div class="footer-column">
             <h3>Links Úteis</h3>
@@ -22,6 +22,6 @@
         </div>
     </div>
     <div class=copy-right>
-        <p>&copy; 2025 Will Coffe Cafeteria. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Cafeteria Marmelada. Todos os direitos reservados.</p>
     </div>
 </footer>

@@ -13,4 +13,56 @@ use DataBase\DataBase;
 class ItemModel {
     const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ?';
     const SEARCH_NAME = 'SELECT * FROM itens WHERE item_name = ? LIMIT 1';
+    const INSERT_ITEM = 'INSERT INTO itens(item_name, item_price, item_qtd) VALUES (?, ?, ?)';
+
+    private $id;
+    private $name;
+    private $price;
+    private $qtd;
+
+    public function __construct($name, $price, $qtd, $id = null) {
+        $this->name = $name;
+        $this->price = $price;
+        $this->qtd = $qtd;
+        $this->id = $id;
+
+        $this->connect();
+    }
+
+    private function connect() {
+        $db = new DataBase();
+        $db->startConnection();
+        $this->db = $db->getConnection();
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function save() {
+        return $this->insert();
+    }
+
+    private function insert() {
+        try {
+            $stmt = $this->db->prepare(self::INSERT_ITEM);
+            $stmt->bindValue(1, $this->name);
+            $stmt->bimdValue(2, $this->price);
+            $stmt->bindValue(3, $this->qtd);
+
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            error_log("Item não Cadastrado: " . $e->getMessage());
+            return false;
+        }
+    }
 }

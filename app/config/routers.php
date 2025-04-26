@@ -5,10 +5,6 @@ $routers = [
         'GET' => RAIZ . 'index.php',
     ],
 
-    '/list' => [
-        'GET' => CONTROLLER_DIR . 'ListController.php?method=getList',
-    ],
-
     '/login' => [
         'GET' => CONTROLLER_DIR . 'LoginController.php?method=index',
         'POST' => CONTROLLER_DIR . 'LoginController.php?method=login',
