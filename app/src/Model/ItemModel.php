@@ -12,5 +12,5 @@ use DataBase\DataBase;
 
 class ItemModel {
     const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ?';
-    
+    const SEARCH_NAME = 'SELECT * FROM itens WHERE item_name = ? LIMIT 1';
 }

@@ -13,8 +13,8 @@ use DataBase\DataBase;
 class UserModel {
     
     const SEARCH_ID = 'SELECT * FROM users WHERE user_id = ?';
-    const SEARCH_EMAIL = 'SELECT * FROM users WHERE email = ? LIMIT 1';
-    const INSERT_USER = 'INSERT INTO users(name, email, password) VALUES (?, ?, ?)';
+    const SEARCH_EMAIL = 'SELECT * FROM users WHERE user_email = ? LIMIT 1';
+    const INSERT_USER = 'INSERT INTO users(user_name, user_email, user_password) VALUES (?, ?, ?)';
     
     private $id;
     private $name;
@@ -87,12 +87,12 @@ class UserModel {
             $register = $command->fetch(PDO::FETCH_ASSOC);
             if ($register) {
                 $object = new self(
-                    $register['name'],
-                    $register['email'],
+                    $register['user_name'],
+                    $register['user_email'],
                     null,
                     $register['user_id']
                 );
-                $object->password = $register['password'];
+                $object->password = $register['user_password'];
             }
 
             return $object;
@@ -115,12 +115,12 @@ class UserModel {
             $register = $command->fetch(PDO::FETCH_ASSOC);
             if ($register) {
                 $object = new self(
-                    $register['email'],
+                    $register['user_email'],
                     '',
                     null,
                     $register['user_id']
                 );
-                $object->password = $register['password'];
+                $object->password = $register['user_password'];
             }
 
             return $object;

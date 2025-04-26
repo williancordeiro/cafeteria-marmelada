@@ -15,12 +15,12 @@ class DataBase {
     private $options;
 
     private $config = [
-        'driver' => 'mysql',
-        'server' => 'localhost',
+        'driver' => 'mariadb',
+        'server' => '10.92.238.5',
         'port' => '3306',
-        'base' => 'willcoffee',
-        'user' => 'will',
-        'password' => '123456',
+        'base' => 'marmelada',
+        'user' => 'worker',
+        'password' => 'cafeBom9',
     ];
 
     public function __construct() {
