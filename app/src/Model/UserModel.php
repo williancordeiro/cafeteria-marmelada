@@ -14,7 +14,7 @@ class UserModel {
     
     const SEARCH_ID = 'SELECT * FROM users WHERE user_id = ?';
     const SEARCH_EMAIL = 'SELECT * FROM users WHERE user_email = ? LIMIT 1';
-    const INSERT_USER = 'INSERT INTO users(user_name, user_email, user_password) VALUES (?, ?, ?)';
+    const INSERT_USER = 'INSERT INTO users(user_name, user_email, user_pass) VALUES (?, ?, ?)';
     
     private $id;
     private $name;
@@ -92,7 +92,7 @@ class UserModel {
                     null,
                     $register['user_id']
                 );
-                $object->password = $register['user_password'];
+                $object->password = $register['user_pass'];
             }
 
             return $object;
@@ -120,7 +120,7 @@ class UserModel {
                     null,
                     $register['user_id']
                 );
-                $object->password = $register['user_password'];
+                $object->password = $register['user_pass'];
             }
 
             return $object;

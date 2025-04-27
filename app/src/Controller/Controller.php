@@ -1,8 +1,6 @@
 <?php
 require_once 'config/geral.php';
 
-use \ReflectionClass;
-
 class Controller {
 
     protected $user;

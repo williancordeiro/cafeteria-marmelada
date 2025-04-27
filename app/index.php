@@ -1,7 +1,13 @@
 <?php
+session_start();
 require_once 'config/geral.php';
 require_once 'config/routers.php';
 require_once CONTROLLER_DIR . 'Controller.php';
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: " . URL_RAIZ . 'home');
+    exit();
+}
 
 $request_uri = $_SERVER['REQUEST_URI'];
 $request_method = $_SERVER['REQUEST_METHOD'];

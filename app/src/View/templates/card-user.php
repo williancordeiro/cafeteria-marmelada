@@ -10,6 +10,5 @@ if (!isset($_SESSION))
     <div class="card-body">
         <p><strong>Nome:</strong> <?php echo htmlspecialchars($user->getName()); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user->getEmail()); ?></p>
-        <h2>☕</h2>
     </div>
 </div>

@@ -21,7 +21,7 @@ class PrincipalController {
             exit();
         }
 
-        include VIEW_DIR . 'Principal/principal.php';
+        include VIEW_DIR . 'Home/home.php';
     }
 }
 ?>

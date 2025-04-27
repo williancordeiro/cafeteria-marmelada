@@ -8,8 +8,9 @@
         </div>
         <div>
             <ol class="menu">
-                <li><a href="<?= URL_RAIZ . 'register' ?>">Cadastrar-se</a></li>
-                <li><a href="<?= URL_RAIZ . 'login' ?>">Entrar</a></li>
+                <li><a href="<?= URL_RAIZ . 'home' ?>">Home</a></li>
+                <li><a href="<?= URL_RAIZ . 'products' ?>">Produtos</a></li>
+                <li><a href="<?= URL_RAIZ . 'profile' ?>">Perfil</a></li>
             </ol>
         </div>
     </nav>
