@@ -15,7 +15,7 @@ class DataBase {
     private $options;
 
     private $config = [
-        'driver' => 'mariadb',
+        'driver' => 'mysql',
         'server' => '10.92.238.5',
         'port' => '3306',
         'base' => 'marmelada',
