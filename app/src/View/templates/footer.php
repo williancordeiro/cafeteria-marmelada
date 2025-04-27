@@ -7,7 +7,7 @@
         <div class="footer-column">
             <h3>Links Úteis</h3>
             <ul class="link-util">
-                <li><a href="<?= URL_RAIZ . 'principal' ?>">Home</a></li>
+                <li><a href="<?= URL_RAIZ . 'home' ?>">Home</a></li>
                 <li><a href="<?= URL_RAIZ . 'list' ?>">Lista</a></li>
                 <li><a href="<?= URL_RAIZ ?>">Contato</a></li>
             </ul>

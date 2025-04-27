@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
         <div>
-            <a class="icon" href="<?= URL_RAIZ ?>">☕</a>
+            <a class="icon" href="<?= URL_RAIZ . 'home' ?>">☕</a>
         </div>
         <div>
             <a class="site-name" href="<?= URL_RAIZ ?>"><?= SITE_NAME ?></a>
