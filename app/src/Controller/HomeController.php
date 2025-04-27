@@ -4,10 +4,12 @@ require_once MODEL_DIR . 'UserModel.php';
 
 use \Model\UserModel;
 
-class PrincipalController {
+class HomeController {
 
     public function index() {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
         if (!isset($_SESSION['user_id'])) {
             header("Location: " . URL_RAIZ . 'login');
