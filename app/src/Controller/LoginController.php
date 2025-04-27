@@ -11,7 +11,9 @@ class LoginController {
     }
 
     public function login() {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
         if (empty($_POST['email']) || empty($_POST['password'])) {
             $_SESSION['error'] = 'Preencha todos os campos!';
