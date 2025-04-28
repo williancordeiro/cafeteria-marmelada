@@ -11,9 +11,15 @@ class ItemController {
     }
 
     public function create() {
-        session_start();
+        include VIEW_DIR . 'Product/create.php';
+    }
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    public function register() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = trim($_POST['name']);
             $price = trim($_POST['price']);
             $qtd = trim($_POST['qtd']);
@@ -21,18 +27,18 @@ class ItemController {
 
         if (empty($name) || empty($price) || empty($qtd)) {
             $_SESSION['error'] = "Campos obrigatórios";
-            header('Location: ' . URL_RAIZ . 'product');
+            header('Location: ' . URL_RAIZ . 'product/create');
             exit();
         }
 
         $item = new ItemModel($name, $price, $qtd);
 
         if ($item->save()) {
-            header('Location: ' . URL_RAIZ . 'home');
+            header('Location: ' . URL_RAIZ . 'product');
             exit();
         } else {
-            $_SESSION['error'] = "Erro ao cadastrar item.";
-            header('Location:' . URL_RAIZ . 'product');
+            $_SESSION['error'] = "Erro ao cadastrar produto.";
+            header('Location: ' . URL_RAIZ . 'product/create');
             exit();
         }
     }

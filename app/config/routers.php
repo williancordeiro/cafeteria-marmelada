@@ -19,10 +19,14 @@ $routers = [
         'GET' => CONTROLLER_DIR . 'HomeController.php?method=index',
     ],
 
-    'product' => [
+    '/products' => [
         'GET' => CONTROLLER_DIR . 'ItemController.php?method=index',
-        'POST' => CONTROLLER_DIR . 'ItemController.php?method=create',
         'POST' => CONTROLLER_DIR . 'ItemController.php?method=update',
+    ],
+
+    '/products/register' => [
+        'GET' => CONTROLLER_DIR . 'ItemController.php?method=create',
+        'POST' => CONTROLLER_DIR . 'ItemController.php?method=register',
     ],
 
     '/404' => [

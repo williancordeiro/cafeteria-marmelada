@@ -11,10 +11,10 @@ use \PDOException;
 use DataBase\DataBase;
 
 class ItemModel {
-    const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ? AND WHERE item_avaliable = 1';
-    const SEARCH_NAME = 'SELECT * FROM itens WHERE item_name = ? LIMIT 1 AND WHERE item_avaliable = 1';
+    const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ? AND item_avaliable = 1';
+    const SEARCH_NAME = 'SELECT * FROM itens WHERE item_name = ? AND item_avaliable = 1 LIMIT 1';
     const INSERT_ITEM = 'INSERT INTO itens(item_name, item_price, item_qtd) VALUES (?, ?, ?)';
-    const UPDATE_NAME = 'UPDATE itens SET item_name = ? WHERE item_id = ?';
+    const UPDATE_ITEM = 'UPDATE itens SET item_name = ?, item_price = ?, item_qtd = ? WHERE item_id = ?';
 
     private $id;
     private $name;
@@ -67,6 +67,10 @@ class ItemModel {
         }
     }
 
+    public static function getAllItens() {
+
+    }
+
     public static function getItemById($id) {
         try {
             $itemModel = new self('', '', '', $id);
@@ -92,23 +96,23 @@ class ItemModel {
         }
     }
 
-    public function rename($newName) {
-        return $this->updateName($newName);
+    public function saveUpdate() {
+        return $this->update();
     }
 
-    private function updateName($newName) {
+    private function update() {
         try {
-            $stmt = $this->db->prepare(self::UPDATE_NAME);
-            $stmt->bindValue(1, $newName);
-            $stmt->bindValue(2,$this-id, PDO::PARAM_INT);
+            $stmt = $this->db->prepare(self::UPDATE_ITEM);
+            $stmt->bindValue(1, $this->name);
+            $stmt->bindValue(2, $this->price);
+            $stmt->bindValue(3, $this->qtd);
+            $stmt->bindValue(4, $this->id);
 
             $stmt->execute();
-            $this->name = $newName;
             return true;
         } catch (PDOException $e) {
-            error_log("Erro ao atualizar o nome do item: " . $e->getMessage());
+            error_log("Item não Atualizado: " . $e->getMessage());
             return false;
         }
     }
-    
-}
+ }

@@ -42,7 +42,7 @@ class LoginController {
         $_SESSION['user_name'] = $user->getName();
         $_SESSION['user_email'] = $user->getEmail();
 
-        $this->redirect('principal');
+        $this->redirect('home');
     }
 
     private function redirect($url) {

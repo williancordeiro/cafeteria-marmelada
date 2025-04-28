@@ -1,8 +1,3 @@
-<?php
-require_once 'config/geral.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,17 +9,7 @@ require_once 'config/geral.php';
 </head>
 <body>
     <?php include VIEW_DIR . 'templates/home-header.php';?>
-    <main class="item-list">
-        <div class="item">
-            <?php foreach ($items as $item) : ?>
-                <?php
-                    $imagem = $item['imagem'];
-                    $nome = $item['content'];
-                    include VIEW_DIR . 'templates/card-itens.php';
-                ?>
-            <?php endforeach; ?>
-        </div>
-    </main>
+    
     <?php include VIEW_DIR . 'templates/footer.php';?>
 </body>
 </html>
