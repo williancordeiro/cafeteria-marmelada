@@ -13,6 +13,7 @@ use DataBase\DataBase;
 class ItemModel {
     const SEARCH_ID = 'SELECT * FROM itens WHERE item_id = ? AND item_avaliable = 1';
     const SEARCH_NAME = 'SELECT * FROM itens WHERE item_name = ? AND item_avaliable = 1 LIMIT 1';
+    const SEARCH_ALL = 'SELECT * FROM itens WHERE item_avaliable = 1 ORDER BY item_id ASC';
     const INSERT_ITEM = 'INSERT INTO itens(item_name, item_price, item_qtd) VALUES (?, ?, ?)';
     const UPDATE_ITEM = 'UPDATE itens SET item_name = ?, item_price = ?, item_qtd = ? WHERE item_id = ?';
 
@@ -68,7 +69,24 @@ class ItemModel {
     }
 
     public static function getAllItens() {
+        $itemModel = new self('', '', '');
+        $conn = $itemModel->db;
 
+        $stmt = $conn->prepare(self::SEARCH_ALL);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $items = [];
+
+        foreach ($results as $row) {
+            $items[] = new self(
+                $row['item_name'],
+                $row['item_price'],
+                $row['item_qtd'],
+                $row['item_id']
+            );
+        }
     }
 
     public static function getItemById($id) {

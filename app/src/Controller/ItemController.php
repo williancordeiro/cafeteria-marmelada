@@ -5,13 +5,47 @@ require_once MODEL_DIR . 'ItemModel.php';
 use \Model\ItemModel;
 
 class ItemController {
+
+    public function __construct($dataBase) {
+        $this->model = new ItemModel($dataBase);
+    }
     
     public function index() {
+        $this->getProducts();
         include VIEW_DIR . 'Product/product.php';
     }
 
     public function create() {
         include VIEW_DIR . 'Product/create.php';
+    }
+
+    private function getImagePath() {
+        $filePath = PUBLIC_DIR . 'img/itens/';
+        $urlPath = URL_IMG . 'itens/' . $this->id . '.png';
+
+        if (!file_exists($filePath)) {
+            $urlPath = URL_IMG . 'itens/default.png';
+        }
+
+        return $urlPath;
+    }
+
+    public function getProducts() {
+        $items = $this->model->getAllItens();
+        $item_img = "public/img/itens/{$item->getId()}.png";
+        $products = [];
+
+        foreach($items as $item) {
+            $products[] = [
+                'id' => (int) $item->getId(),
+                'nome' => htmlspecialchars($item->getName()),
+                'preco' => number_format($item->getPrice(), 2, ',', '.'),
+                'qtd' => (int) $item->getQtd(),
+                'imagem' => $item->getImagePath()
+            ];
+        }
+
+        return $products;
     }
 
     public function register() {

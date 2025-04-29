@@ -21,12 +21,16 @@ $routers = [
 
     '/products' => [
         'GET' => CONTROLLER_DIR . 'ItemController.php?method=index',
-        'POST' => CONTROLLER_DIR . 'ItemController.php?method=update',
     ],
 
     '/products/register' => [
         'GET' => CONTROLLER_DIR . 'ItemController.php?method=create',
         'POST' => CONTROLLER_DIR . 'ItemController.php?method=register',
+    ],
+
+    '/products/edit' => [
+        'GET' => CONTROLLER_DIR . 'ItemController.php?method=edit',
+        'POST' => CONTROLLER_DIR . 'ItemController.php?method=update',
     ],
 
     '/404' => [
