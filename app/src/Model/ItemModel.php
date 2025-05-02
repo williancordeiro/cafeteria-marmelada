@@ -87,6 +87,8 @@ class ItemModel {
                 $row['item_id']
             );
         }
+
+        return $items;
     }
 
     public static function getItemById($id) {

@@ -10,8 +10,29 @@
 <body>
     <?php include VIEW_DIR . 'templates/home-header.php';?>
     
-    <main>
-        
+    <main class="item-table-wrapper">
+        <table class="item-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($items as $item): ?>
+                    <?php
+                        $id = $item['id'];
+                        $nome = $item['nome'];
+                        $preco = $item['preco'];
+                        $qtd = $item['qtd'];
+                        include VIEW_DIR . 'templates/row-item.php';
+                    ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
