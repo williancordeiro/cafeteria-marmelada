@@ -31,7 +31,7 @@ class HomeController {
     }
 
     public function getProducts() {
-        $items = $this->model->getAllItens();
+        $items = ItemModel::getAllItens();
         $item_img = "public/img/itens/{$item->getId()}.png";
         $products = [];
 
