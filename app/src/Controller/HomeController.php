@@ -43,7 +43,7 @@ class HomeController {
 
     public function getProducts() {
         $items = ItemModel::getAllItens();
-        $item_img = "public/img/itens/{$item->getId()}.png";
+        //$item_img = "public/img/itens/{$item->getId()}.png";
         $products = [];
 
         foreach($items as $item) {
