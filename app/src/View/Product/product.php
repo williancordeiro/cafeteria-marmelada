@@ -10,32 +10,34 @@
 <body>
     <?php include VIEW_DIR . 'templates/home-header.php';?>
     
-    <main class="item-table-wrapper">
-        <div class="table-header">
-            <a href="<?= URL_RAIZ . '/products/register' ?>" class="add-btn">Adicionar +</a>
+    <main>
+        <div class="item-table-container">
+            <div class="add-btn-wrapper">
+                <a href="<?= URL_RAIZ . '/products/register' ?>" class="add-btn">Adicionar +</a>
+            </div>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($items as $item): ?>
+                        <?php
+                            $id = $item['id'];
+                            $nome = $item['nome'];
+                            $preco = $item['preco'];
+                            $qtd = $item['qtd'];
+                            include VIEW_DIR . 'templates/row-item.php';
+                        ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
-        <table class="item-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($items as $item): ?>
-                    <?php
-                        $id = $item['id'];
-                        $nome = $item['nome'];
-                        $preco = $item['preco'];
-                        $qtd = $item['qtd'];
-                        include VIEW_DIR . 'templates/row-item.php';
-                    ?>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
     </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
