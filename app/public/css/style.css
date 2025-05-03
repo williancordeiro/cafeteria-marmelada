@@ -448,7 +448,7 @@ footer {
     background-color: #c0392b;
 }
 
-/*.card-item {
+.card-item {
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -480,4 +480,4 @@ footer {
 
 .item-price, .item-quantity {
     color: #555;
-}*/
+}
