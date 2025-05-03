@@ -49,6 +49,10 @@ class ItemModel {
         return $this->price;
     }
 
+    public function getQtd() {
+        return $this->qtd;
+    }
+
     public function save() {
         return $this->insert();
     }
