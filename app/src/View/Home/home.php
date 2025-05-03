@@ -27,6 +27,7 @@ require_once 'config/geral.php';
             <?php endforeach; ?>
         </div>
     </main>
+    
     <?php include VIEW_DIR . 'templates/footer.php';?>
 </body>
 </html>
