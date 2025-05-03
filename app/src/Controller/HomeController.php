@@ -30,16 +30,14 @@ class HomeController {
         include VIEW_DIR . 'Home/home.php';
     }
 
-    private function getImagePath() {
-        $filePath = PUBLIC_DIR . 'img/itens/';
-        $urlPath = URL_IMG . 'itens/' . $this->id . '.png';
-
-        if (!file_exists($filePath)) {
-            $urlPath = URL_IMG . 'itens/default.png';
-        }
-
+    private function getImagePath(int $id): string {
+        $filePath = PUBLIC_DIR . "img/itens/{$id}.png";
+        $urlPath = file_exists($filePath)
+            ? URL_IMG . "itens/{$id}.png"
+            : URL_IMG . "itens/default.png";
+    
         return $urlPath;
-    }
+    }    
 
     public function getProducts() {
         $items = ItemModel::getAllItens();
@@ -52,7 +50,7 @@ class HomeController {
                 'nome' => htmlspecialchars($item->getName()),
                 'preco' => number_format($item->getPrice(), 2, ',', '.'),
                 'qtd' => (int) $item->getQtd(),
-                'imagem' => $item->getImagePath()
+                'imagem' => $this->getImagePath($id)
             ];
         }
 

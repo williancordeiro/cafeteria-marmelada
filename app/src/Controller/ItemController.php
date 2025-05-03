@@ -21,7 +21,6 @@ class ItemController {
 
     public function getProducts() {
         $items = ItemModel::getAllItens();
-        //$item_img = "public/img/itens/{$item->getId()}.png";
         $products = [];
 
         foreach($items as $item) {
@@ -30,7 +29,6 @@ class ItemController {
                 'nome' => htmlspecialchars($item->getName()),
                 'preco' => number_format($item->getPrice(), 2, ',', '.'),
                 'qtd' => (int) $item->getQtd(),
-                'imagem' => $item->getImagePath()
             ];
         }
 
