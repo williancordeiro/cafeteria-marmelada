@@ -11,4 +11,7 @@
         <label for="qtd">Quantidade:</label>
         <input type="number" name="qtd" id="qtd" min="0" max="100" required>
     </div>
+    <div class="form-group btn">
+        <button type="submit">Cadastrar</button>
+    </div>
 </form>
