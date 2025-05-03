@@ -50,18 +50,18 @@ class ItemController {
 
         if (empty($name) || empty($price) || empty($qtd)) {
             $_SESSION['error'] = "Campos obrigatórios";
-            header('Location: ' . URL_RAIZ . 'product/create');
+            header('Location: ' . URL_RAIZ . 'products/create');
             exit();
         }
 
         $item = new ItemModel($name, $price, $qtd);
 
         if ($item->save()) {
-            header('Location: ' . URL_RAIZ . 'product');
+            header('Location: ' . URL_RAIZ . 'products');
             exit();
         } else {
             $_SESSION['error'] = "Erro ao cadastrar produto.";
-            header('Location: ' . URL_RAIZ . 'product/create');
+            header('Location: ' . URL_RAIZ . 'products/create');
             exit();
         }
     }
