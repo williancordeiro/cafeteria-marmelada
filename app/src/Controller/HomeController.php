@@ -49,7 +49,7 @@ class HomeController {
             $products[] = [
                 'id' => $id,
                 'nome' => htmlspecialchars($item->getName()),
-                'preco' => number_format($item->getPrice(), 2, ',', '.'),
+                'preco' => (float) $item->getPrice(),
                 'qtd' => (int) $item->getQtd(),
                 'imagem' => $this->getImagePath($id)
             ];

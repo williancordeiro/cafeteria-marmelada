@@ -27,7 +27,7 @@ class ItemController {
             $products[] = [
                 'id' => (int) $item->getId(),
                 'nome' => htmlspecialchars($item->getName()),
-                'preco' => number_format($item->getPrice(), 2, ',', '.'),
+                'preco' => (float) $item->getPrice(),
                 'qtd' => (int) $item->getQtd(),
             ];
         }
