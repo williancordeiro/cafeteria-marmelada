@@ -19,17 +19,6 @@ class ItemController {
         include VIEW_DIR . 'Product/create.php';
     }
 
-    private function getImagePath() {
-        $filePath = PUBLIC_DIR . 'img/itens/';
-        $urlPath = URL_IMG . 'itens/' . $this->id . '.png';
-
-        if (!file_exists($filePath)) {
-            $urlPath = URL_IMG . 'itens/default.png';
-        }
-
-        return $urlPath;
-    }
-
     public function getProducts() {
         $items = $this->model->getAllItens();
         $item_img = "public/img/itens/{$item->getId()}.png";
