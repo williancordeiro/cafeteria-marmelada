@@ -115,5 +115,23 @@ class ItemController {
             exit();
         }
     }
-    
+
+    public function deleteItem() {
+        $id = (int) $_GET['id'];
+        $item = ItemModel::getItemById($id);
+
+        if (!item) {
+            $_SESSION['error'] = "Item não encontrado!";
+            header('Location: ' . URL_RAIZ . 'products');
+            exit();
+        }
+
+        if ($item->delete())
+            $_SESSION['success'] = 'O Produto foi excluido com sucesso.';
+        else
+            $_SESSION['error'] = 'Erro ao exluir produto!';
+
+
+        header('Location: ' . URL_RAIZ . 'products');
+    }    
 }

@@ -33,6 +33,10 @@ $routers = [
         'POST' => CONTROLLER_DIR . 'ItemController.php?method=update',
     ],
 
+    '/products/delete' => [
+        'POST' => CONTROLLER_DIR . 'ItemController.php?method=delete',
+    ],
+
     '/404' => [
         'GET' => CONTROLLER_DIR . 'StatusController.php?method=error404',
     ],

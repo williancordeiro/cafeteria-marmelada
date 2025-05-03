@@ -16,6 +16,7 @@ class ItemModel {
     const SEARCH_ALL = 'SELECT * FROM itens WHERE item_avaliable = 1 ORDER BY item_id ASC';
     const INSERT_ITEM = 'INSERT INTO itens(item_name, item_price, item_qtd) VALUES (?, ?, ?)';
     const UPDATE_ITEM = 'UPDATE itens SET item_name = ?, item_price = ?, item_qtd = ? WHERE item_id = ?';
+    const DELETE_ITEM = 'UPDATE itens SET item_avaliable = 0 WHERE item_id = ?';
 
     private $id;
     private $name;
@@ -149,6 +150,22 @@ class ItemModel {
             return true;
         } catch (PDOException $e) {
             error_log("Item não Atualizado: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function delete() {
+        return $this->desactiveItem();
+    }
+
+    private function desactiveItem() {
+        try {
+            $stmt = $this->db->prepare(self::DELETE_ITEM);
+            $stmt->bindValue(1, $this->id);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            error_log("Erro ao deletar item: " . $e->getMessage());
             return false;
         }
     }
