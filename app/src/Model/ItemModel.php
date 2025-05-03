@@ -37,6 +37,18 @@ class ItemModel {
         $this->db = $db->getConnection();
     }
 
+    public function setName($name) {
+        $this->name = $name;
+    }
+    
+    public function setPrice($price) {
+        $this->price = $price;
+    }
+    
+    public function setQtd($qtd) {
+        $this->qtd = $qtd;
+    }    
+
     public function getId() {
         return $this->id;
     }
@@ -104,6 +116,7 @@ class ItemModel {
             $command->bindValue(1, $id, PDO::PARAM_STR);
             $command->execute();
 
+            $object = false;
             $register = $command->fetch(PDO::FETCH_ASSOC);
             if ($register) {
                 $object = new self(

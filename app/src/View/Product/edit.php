@@ -10,6 +10,25 @@
 <body>
     <?php include VIEW_DIR . 'templates/home-header.php';?>
     
+    <main class="container">
+        <div class="form-container">
+            <div class="form-text" >
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo '<p style="color: red;">' . $_SESSION['error'] . '</p>';
+                        unset($_SESSION['error']);
+                    }
+                ?>
+                <h1>☕</h1>
+                <h3>Adicionar novo item</h3>
+            </div>
+            <?php include VIEW_DIR . 'templates/item-form-edit.php';?>
+            <div class="btn-return-wrapper">
+                <a class="link" href="<?= URL_RAIZ . 'products' ?>" class="btn-return"><- Voltar</a>
+            </div>
+        </div>
+    </main>
+
     <?php include VIEW_DIR . 'templates/footer.php';?>
 </body>
 </html>

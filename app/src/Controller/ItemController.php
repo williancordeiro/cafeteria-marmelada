@@ -63,4 +63,44 @@ class ItemController {
             exit();
         }
     }
+
+    public function edit() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: ' . URL_RAIZ . 'products');
+            exit();
+        }
+    
+        $id = (int) $_GET['id'];
+        $name = trim($_POST['name']);
+        $price = trim($_POST['price']);
+        $qtd = trim($_POST['qtd']);
+    
+        if (empty($name) || empty($price) || empty($qtd)) {
+            $_SESSION['error'] = "Todos os campos são obrigatórios.";
+            header('Location: ' . URL_RAIZ . 'products/edit?id=' . $id);
+            exit();
+        }
+    
+        $item = ItemModel::getItemById($id);
+    
+        if (!$item) {
+            $_SESSION['error'] = "Item não encontrado.";
+            header('Location: ' . URL_RAIZ . 'products');
+            exit();
+        }
+    
+        $item->setName($name);
+        $item->setPrice($price);
+        $item->setQtd($qtd);
+    
+        if ($item->saveUpdate()) {
+            header('Location: ' . URL_RAIZ . 'products');
+            exit();
+        } else {
+            $_SESSION['error'] = "Erro ao atualizar o produto.";
+            header('Location: ' . URL_RAIZ . 'products/edit?id=' . $id);
+            exit();
+        }
+    }
+    
 }
