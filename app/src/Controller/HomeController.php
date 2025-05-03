@@ -45,8 +45,9 @@ class HomeController {
         $products = [];
 
         foreach($items as $item) {
+            $id = (int) $item->getId();
             $products[] = [
-                'id' => (int) $item->getId(),
+                'id' => $id,
                 'nome' => htmlspecialchars($item->getName()),
                 'preco' => number_format($item->getPrice(), 2, ',', '.'),
                 'qtd' => (int) $item->getQtd(),
