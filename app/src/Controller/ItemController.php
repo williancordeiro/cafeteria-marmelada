@@ -6,9 +6,9 @@ use \Model\ItemModel;
 
 class ItemController {
 
-    public function __construct($dataBase) {
-        $this->model = new ItemModel($dataBase);
-    }
+    // public function __construct($dataBase) {
+    //     $this->model = new ItemModel($dataBase);
+    // }
     
     public function index() {
         $this->getProducts();
@@ -20,7 +20,7 @@ class ItemController {
     }
 
     public function getProducts() {
-        $items = $this->model->getAllItens();
+        $items = ItemModel::getAllItens();
         //$item_img = "public/img/itens/{$item->getId()}.png";
         $products = [];
 
