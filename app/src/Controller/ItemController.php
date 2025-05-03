@@ -65,6 +65,19 @@ class ItemController {
     }
 
     public function edit() {
+        $id = (int) $_GET['id'];
+        $item = ItemModel::getItemById($id);
+
+        if (!$item) {
+            $_SESSION['error'] = "Item não encontrado.";
+            header('Location: ' . URL_RAIZ . 'products');
+            exit();
+        }
+
+        include VIEW_DIR . 'Product/edit.php';
+    }
+
+    public function update() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             header('Location: ' . URL_RAIZ . 'products');
             exit();
