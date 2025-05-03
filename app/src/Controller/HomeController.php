@@ -20,7 +20,7 @@ class HomeController {
 
         $user = UserModel::getUserById($_SESSION['user_id']);
 
-        $this->getProducts();
+        $items = $this->getProducts();
 
         if (!$user) {
             header("Location: " . URL_RAIZ . 'login');

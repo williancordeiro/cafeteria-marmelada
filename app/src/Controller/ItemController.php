@@ -11,7 +11,7 @@ class ItemController {
     // }
     
     public function index() {
-        $this->getProducts();
+        $items = $this->getProducts();
         include VIEW_DIR . 'Product/product.php';
     }
 
