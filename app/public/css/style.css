@@ -10,6 +10,7 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
+    padding-top: 100px;
 }
 
 .form-container {
