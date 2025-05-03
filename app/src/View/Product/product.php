@@ -11,6 +11,9 @@
     <?php include VIEW_DIR . 'templates/home-header.php';?>
     
     <main class="item-table-wrapper">
+        <div class="table-header">
+            <a href="<?= URL_RAIZ . '/products/register' ?>" class="add-btn">Adicionar +</a>
+        </div>
         <table class="item-table">
             <thead>
                 <tr>
