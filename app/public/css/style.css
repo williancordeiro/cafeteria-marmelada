@@ -25,6 +25,7 @@ main {
 .main h2 {
     font-size: 42px;
     text-align: center;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgb(131, 131, 131);
 }
@@ -38,6 +39,11 @@ main {
 .main div {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.main div .border {
+    border: 1px solid rgb(131, 131, 131);
 }
 
 .main div div {

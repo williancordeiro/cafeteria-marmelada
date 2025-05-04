@@ -10,6 +10,7 @@
                 <p>- Doces</p>
                 <p>- Graos de Café</p>
             </div>
+            <div class="border"></div>
             <div>
                 <h3>Padaria</h3>
                 <p>- Pão Doce</p>
