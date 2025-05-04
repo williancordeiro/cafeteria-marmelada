@@ -458,7 +458,7 @@ footer {
 
 .item-name {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -472,5 +472,12 @@ footer {
 }
 
 .item-price, .item-quantity {
-    color: #555;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-price span, .item-quantity span {
+    font-weight: normal;
 }
