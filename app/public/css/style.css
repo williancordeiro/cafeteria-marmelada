@@ -423,6 +423,11 @@ footer {
     box-sizing: border-box;
 }
 
+.item-scroll {
+    max-width: 390vh;
+    overflow-y: auto;
+}
+
 .item {
     display: flex;
     flex-wrap: wrap;
@@ -431,11 +436,6 @@ footer {
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.445);
     border-radius: 9px;
-}
-
-.item-scroll {
-    max-width: 390vh;
-    overflow-y: auto;
 }
 
 .card-item {
