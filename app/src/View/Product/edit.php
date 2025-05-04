@@ -20,7 +20,7 @@
                     }
                 ?>
                 <h1>☕</h1>
-                <h3>Adicionar novo item</h3>
+                <h3>Editar Item</h3>
             </div>
             <?php include VIEW_DIR . 'templates/item-form-edit.php';?>
             <div class="btn-return-wrapper">

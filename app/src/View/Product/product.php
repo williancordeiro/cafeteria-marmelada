@@ -12,6 +12,7 @@
     
     <main>
         <div class="item-table-container">
+            <h3>Produtos disponiveis:</h3>
             <div class="add-btn-wrapper">
                 <a href="<?= URL_RAIZ . 'products/register' ?>" class="add-btn">Adicionar +</a>
             </div>
