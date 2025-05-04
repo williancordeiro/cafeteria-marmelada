@@ -8,7 +8,7 @@
                 <p>- Cardapio</p>
                 <p>- Bolos</p>
                 <p>- Doces</p>
-                <p>- Graos de Café</p>
+                <p>- Grãos de Café</p>
             </div>
             <div class="border"></div>
             <div>
