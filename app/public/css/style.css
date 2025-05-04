@@ -366,8 +366,8 @@ footer {
 }
 
 .item-table-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     background-color: #fff;
     padding: 20px;
     margin: 70px auto 0;
