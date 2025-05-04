@@ -120,7 +120,7 @@ class ItemController {
         $id = (int) $_GET['id'];
         $item = ItemModel::getItemById($id);
 
-        if (!item) {
+        if (!$item) {
             $_SESSION['error'] = "Item não encontrado!";
             header('Location: ' . URL_RAIZ . 'products');
             exit();

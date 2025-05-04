@@ -34,7 +34,7 @@ $routers = [
     ],
 
     '/products/delete' => [
-        'POST' => CONTROLLER_DIR . 'ItemController.php?method=delete',
+        'POST' => CONTROLLER_DIR . 'ItemController.php?method=deleteItem',
     ],
 
     '/404' => [
