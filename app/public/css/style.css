@@ -439,27 +439,29 @@ footer {
     height: 100%;
 }
 
-.item-img {
+/* .item-img {
     background-color: #ffffff;
     padding: 10px;
     border-radius: 30%;
     width: 80px;
     height: 80px;
     object-fit: contain;
-}
+} */
 
 .item-img {
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: cover;
+    margin-bottom: 0.5rem;
 }
 
 .item-name {
     font-weight: bold;
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     text-align: center;
+    border: 1px solid rgb(194, 194, 194);
 }
 
 .item-details {
@@ -474,6 +476,7 @@ footer {
     font-size: 1rem;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgb(194, 194, 194);
 }
 
 .item-price span, .item-quantity span {
