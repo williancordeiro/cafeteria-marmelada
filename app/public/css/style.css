@@ -11,7 +11,6 @@ main {
     background-attachment: fixed;
     height: 100vh;
     padding-top: 100px;
-    overflow-x: auto;
 }
 
 .form-container {
