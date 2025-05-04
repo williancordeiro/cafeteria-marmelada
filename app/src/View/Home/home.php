@@ -15,8 +15,8 @@ require_once 'config/geral.php';
 <body>
     <?php include VIEW_DIR . 'templates/home-header.php';?>
     <main class="item-list">
-        <div class="item-scroll">
-            <div class="item">
+        <div class="item">
+            <div class="item-scroll">
                 <?php foreach ($items as $item) : ?>
                     <?php 
                         $imagem = $item['imagem'];

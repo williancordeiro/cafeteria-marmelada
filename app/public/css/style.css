@@ -416,18 +416,11 @@ footer {
 }
 
 .item-list {
-    background-color: rgba(255, 255, 255, 0.384);
-    border-radius: 9px;
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 100px 20px;
     box-sizing: border-box;
-}
-
-.item-scroll {
-    max-width: 390vh;
-    overflow-y: auto;
 }
 
 .item {
@@ -436,6 +429,13 @@ footer {
     gap: 2rem;
     justify-content: center;
     padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 9px;
+}
+
+.item-scroll {
+    max-width: 390vh;
+    overflow-y: auto;
 }
 
 .card-item {
