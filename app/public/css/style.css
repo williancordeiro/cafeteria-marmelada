@@ -89,6 +89,10 @@ main {
     background-color: #b38410;
 }
 
+.btn-return-wrapper {
+    margin-top: 2rem;
+}
+
 .link {
     text-decoration: none;
     color: #d4a017;

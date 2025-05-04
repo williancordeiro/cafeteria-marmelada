@@ -23,7 +23,7 @@
                 <h3>Adicionar novo item</h3>
             </div>
             <?php include VIEW_DIR . 'templates/item-form.php';?>
-            <div class="text-form">
+            <div class="btn-return-wrapper">
                 <a class="link" href="<?= URL_RAIZ . 'products' ?>" class="btn-return"><- Voltar</a>
             </div>
         </div>
