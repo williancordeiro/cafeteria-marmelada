@@ -5,8 +5,8 @@
         <p class="item-name"><?= $nome ?></p>
 
         <div class="item-details">
-            <span class="item-price">Preço: R$ <?= number_format($preco, 2, ',', '.') ?></span>
-            <span class="item-quantity">Qtd: <?= $qtd ?></span>
+            <p class="item-price">Preço: <span>R$ <?= number_format($preco, 2, ',', '.') ?></span> </p>
+            <p class="item-quantity">Quantidade: <span><?= $qtd ?></span></p>
         </div>
     </div>
 </div>
