@@ -1,5 +1,5 @@
 FROM php:8.3.22-fpm
-ENV TZ="Ameria/Sao_Paulo"
+ENV TZ="America/Sao_Paulo"
 RUN apt-get update
 RUN apt-get install -y nginx
 RUN docker-php-ext-install pdo_mysql
