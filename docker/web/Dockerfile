@@ -6,4 +6,4 @@ RUN docker-php-ext-install pdo_mysql
 COPY app/ /var/www/cafeteria-marmelada/
 COPY docker/web/marmelada /etc/nginx/sites-avaliable/marmelada
 RUN rm -f /etc/nginx/sites-enable/default
-RUN ln -s /etc/nginx/sites-avaliable/marmelada /etc/nginx/sites/enable
+RUN ln -s /etc/nginx/sites-avaliable/marmelada /etc/nginx/sites-enable
