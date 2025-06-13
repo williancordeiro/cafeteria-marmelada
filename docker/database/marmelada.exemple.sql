@@ -2,9 +2,9 @@ CREATE DATABASE IF NOT EXISTS marmelada
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-CREATE USER IF NOT EXISTS 'worker'@'%' IDENTIFIED BY 'senha';
+CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'password';
 
-GRANT ALL PRIVILEGES ON marmelada.* TO 'worker'@'%';
+GRANT ALL PRIVILEGES ON marmelada.* TO 'user'@'%';
 
 FUSH PRIVILEGES;
 

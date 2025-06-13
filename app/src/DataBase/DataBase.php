@@ -18,9 +18,9 @@ class DataBase {
         'driver' => 'mysql',
         'server' => '',
         'port' => '3306',
-        'base' => '',
-        'user' => '',
-        'password' => '',
+        'base' => 'marmelada',
+        'user' => 'user',
+        'password' => 'password',
     ];
 
     public function __construct() {

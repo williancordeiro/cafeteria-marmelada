@@ -5,6 +5,6 @@ $dataBase = [
     'server' => '',
     'port' => '3306',
     'base' => 'marmelada',
-    'user' => '',
-    'password' => '',
+    'user' => 'user',
+    'password' => 'password',
 ];
