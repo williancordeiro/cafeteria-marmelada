@@ -6,7 +6,7 @@ CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'password';
 
 GRANT ALL PRIVILEGES ON marmelada.* TO 'user'@'%';
 
-FUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 
 USE marmelada;
 
