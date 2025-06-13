@@ -16,23 +16,43 @@ class RegisterController {
             session_start();
         }
 
+        try {
+            if($_SERVER['REQUEST_METHOD'] === 'POST')
+                throw new Exception("Metodo de requisição invalido", 1);
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = trim($_POST['name']);
-            $email = trim($_POST['email']);
-            $password = trim($_POST['password']);
-        }
+            $name = trim($_POST['name'] ?? '');
+            $email = trim($_POST['email'] ?? '');
+            $password = trim($_POST['password'] ?? '');
 
-        if (empty($name) || empty($email) || empty($password)) {
-            // echo "Campos Obrigatórios";
-            $_SESSION['error'] = "Campos obrigatórios";
+            if (empty($name) || empty($email) || empty($password))
+                throw new Exception("Preencha todos os campos");
+
+            $user = new UserModel($name, $email, $password);
+            
+            if (!$user->save())
+                throw new Exception("Não foi possível completar o cadastro.");
+
+            $_SESSION['success'] = "Cadastro Realizado com Sucesso!";
+            header('Location: ' . URL_RAIZ . 'login');
+            exit();
+                
+        } catch (\Throwable $e) {
+            error_log("ERRO AO CADASTRAR USUÁRIO: " . $e.getMessage());
+
+            $_SESSION['error'] = "Erro ao cadastrar usuario";
             header('Location: ' . URL_RAIZ . 'register');
             exit();
         }
 
-        $user = new UserModel($name, $email, $password);
+        /*if (empty($name) || empty($email) || empty($password)) {
+            // echo "Campos Obrigatórios";
+            $_SESSION['error'] = "Campos obrigatórios";
+            
+        }*/
 
-        if ($user->save()) {
+        
+
+        /*if ($user->save()) {
             // echo "Usuário cadastrado com sucesso! Redirecionando...";
             header('Location: ' . URL_RAIZ . 'login');
             exit();
@@ -41,7 +61,7 @@ class RegisterController {
             $_SESSION['error'] = "Erro ao cadastrar usuário.";
             header('Location: ' . URL_RAIZ . 'register');
             exit();
-        }
+        }*/
     }
 }
 ?>
