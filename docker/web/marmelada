@@ -1,0 +1,35 @@
+server {
+	listen 80;
+        listen [::]:80;
+
+	server_name marmelada.com.br www.marmelada.com.br;
+	return 301 https://www.marmelada.com.br$request_uri;
+	
+	server_name marmelada.com.br www.marmelada.com.br;
+
+	root /var/www/cafeteria-marmelada/app/;
+
+	index index.html index.php;
+
+	access_log /var/www/cafeteria-marmelada/logs/nginx_access.log;
+	error_log /var/www/cafeteria-marmelada/logs/nginx_error.log;
+	
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+	
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass php:9000;
+	}
+
+	error_page 404 /404.php;
+	location = /404.php {
+		root /var/www/cafeteria-marmelada/app/src/View/Status-pages/;
+		internal;
+	}
+
+	location ~/\.ht{
+		deny all;
+	}
+}
