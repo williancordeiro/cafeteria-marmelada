@@ -20,7 +20,7 @@ server {
 	
 	location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
-		fastcgi_pass php:9000;
+		fastcgi_pass localhost:9000;
 	}
 
 	error_page 404 /404.php;
