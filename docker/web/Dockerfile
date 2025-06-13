@@ -7,3 +7,4 @@ COPY app/ /var/www/cafeteria-marmelada/app/
 COPY docker/web/marmelada /etc/nginx/sites-avaliable/marmelada
 RUN rm -f /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-avaliable/marmelada /etc/nginx/sites-enabled
+RUN /etc/init.d/nginx start
