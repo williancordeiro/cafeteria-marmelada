@@ -16,11 +16,11 @@ class DataBase {
 
     private $config = [
         'driver' => 'mysql',
-        'server' => 'sql.marmelada.com.br',
+        'server' => '',
         'port' => '3306',
-        'base' => 'marmelada',
-        'user' => 'worker',
-        'password' => 'cafeBom9',
+        'base' => '',
+        'user' => '',
+        'password' => '',
     ];
 
     public function __construct() {
