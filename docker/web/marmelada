@@ -3,9 +3,6 @@ server {
         listen [::]:80;
 
 	server_name marmelada.com.br www.marmelada.com.br;
-	return 301 https://www.marmelada.com.br$request_uri;
-	
-	server_name marmelada.com.br www.marmelada.com.br;
 
 	root /var/www/cafeteria-marmelada/app/;
 
