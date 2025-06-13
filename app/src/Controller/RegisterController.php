@@ -37,7 +37,7 @@ class RegisterController {
             exit();
                 
         } catch (\Throwable $e) {
-            error_log("ERRO AO CADASTRAR USUÁRIO: " . $e.getMessage());
+            error_log("ERRO AO CADASTRAR USUÁRIO: " . $e->getMessage());
 
             $_SESSION['error'] = "Erro ao cadastrar usuario";
             header('Location: ' . URL_RAIZ . 'register');
