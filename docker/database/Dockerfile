@@ -1,4 +1,4 @@
-FROM mysql:8.0.42-debian
+FROM mariadb:noble
 ENV TZ="Ameria/Sao_Paulo"
-ENV MYSQL_ALLOW_EMPTY_PASSWORD=True
-COPY ./docker/database/marmelada.sql /docker-entrypoint-initdb.d/marmelada.sql
+ENV MARIADB_ROOT_PASSWORD=qwe123
+COPY ./database/marmelada.sql: /docker-entrypoint-initdb.d/marmelada.sql
