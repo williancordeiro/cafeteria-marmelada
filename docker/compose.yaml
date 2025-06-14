@@ -13,6 +13,12 @@ services:
       - ../app/:/var/www/cafeteria-marmelada/app/
     networks:
       - marmelada-network
+    healthcheck:
+      test: ["CMD-SHELL", "fcgi_php -v || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    restart: unless-stopped
   nginx:
     build: ./web/nginx
     depends_on:
