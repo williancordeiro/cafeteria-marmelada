@@ -23,7 +23,8 @@ services:
   nginx:
     image: nginx:stable-alpine
     depends_on:
-      - php-fpm
+      php-fpm:
+        condition: service_healthy
     ports:
       - 80:80
     volumes:
