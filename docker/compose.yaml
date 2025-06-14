@@ -5,7 +5,7 @@ services:
       - TZ=America/Sao_Paulo
       - MARIADB_ROOT_PASSWORD=qwe123
     ports:
-      -3306:3306
+      - 3306:3306
     volumes:
       - ./database/marmelada.sql:/docker-entrypoint-initdb.d/marmelada.sql
       - mariadbdata:/var/lib/mysql
