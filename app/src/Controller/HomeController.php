@@ -13,7 +13,7 @@ class HomeController {
             session_start();
         }
 
-        /*if (!isset($_SESSION['user_id'])) {
+        if (!isset($_SESSION['user_id'])) {
             header("Location: " . URL_RAIZ . 'login');
             exit();
         }
@@ -25,7 +25,7 @@ class HomeController {
         if (!$user) {
             header("Location: " . URL_RAIZ . 'login');
             exit();
-        }*/
+        }
 
         include VIEW_DIR . 'Home/home.php';
     }
