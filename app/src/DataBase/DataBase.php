@@ -16,7 +16,7 @@ class DataBase {
 
     private $config = [
         'driver' => 'mysql',
-        'server' => '172.17.0.3',
+        'server' => 'db',
         'port' => '3306',
         'base' => 'marmelada',
         'user' => 'user',
