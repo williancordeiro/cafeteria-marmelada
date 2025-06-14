@@ -4,7 +4,8 @@
             <h3>Sobre nós</h3>
             <p>Cafeteria Marmelada, cafeteria criada para os amantes de café e códigos . . .</p>
         </div>
-        <div class="footer-column">
+        <div class="footer-row">
+            <div class="footer-column">
             <h3>Links Úteis</h3>
             <ul class="link-util">
                 <li><a href="<?= URL_RAIZ . 'home' ?>">Cardapio</a></li>
@@ -19,6 +20,7 @@
                 <li class="twitter"><a href="<?= URL_RAIZ ?>">⚫ Twitter</a></li>
                 <li class="instagram"><a href="<?= URL_RAIZ ?>">🟣 Instagram</a></li>
             </ul>
+        </div>
         </div>
     </div>
     <div class=copy-right>

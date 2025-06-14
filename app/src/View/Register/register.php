@@ -36,5 +36,6 @@ session_start();
     </main>
 
     <?php include VIEW_DIR . 'templates/footer.php';?>
+    <script src="<?= URL_JS . 'index.js' ?>"></script>
 </body>
 </html>
