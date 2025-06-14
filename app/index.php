@@ -32,6 +32,7 @@ if ($request_uri === '/' && $request_method === 'GET') {
         <?php include VIEW_DIR . 'templates/header.php';?>
         <?php include VIEW_DIR . 'Index/index.php';?>
         <?php include VIEW_DIR . 'templates/footer.php';?>
+        <script src="<?= URL_JS . 'index.js' ?>"></script>
     </body>
     </html>
     <?php

@@ -21,4 +21,5 @@
 
     const URL_PUBLIC = URL_RAIZ . 'public/';
     const URL_CSS = URL_PUBLIC . 'css/';
+    const URL_JS = URL_PUBLIC . 'js/';
     const URL_IMG = URL_PUBLIC . 'img/';
