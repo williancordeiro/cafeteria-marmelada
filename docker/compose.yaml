@@ -13,18 +13,11 @@ services:
       - ../app/:/var/www/cafeteria-marmelada/app/
     networks:
       - marmelada-network
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost/ping || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-    start_period: 30s
     restart: unless-stopped
   nginx:
     build: ./web/nginx
     depends_on:
-      php-fpm:
-        condition: service_healthy
+      - php-fpm
     ports:
       - 80:80
     networks:
