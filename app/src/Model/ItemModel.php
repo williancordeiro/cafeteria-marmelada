@@ -23,6 +23,8 @@ class ItemModel {
     private $price;
     private $qtd;
 
+    private PDO $db;
+
     public function __construct($name, $price, $qtd, $id = null) {
         $this->name = $name;
         $this->price = $price;
