@@ -4,9 +4,11 @@ $primary-20: #096fdf;
 $secondary: #ffffff;
 $background: #ffffff;
 $danger: #ff0000;
+$text: #ffffff;
 $grey: #d1d1d6;
 $grey-20: #aeaeb2;
 $grey-40: #999999;
+$black: #000000;
 $border: #ccc;
 $shadow: rgba(0, 0, 0, 0.1);
 $dark-bg: rgb(37, 29, 19);
@@ -15,6 +17,27 @@ $highlight-hover: #8a6d2f;
 $light-blue: #2c81f1;
 $grey-twitter: #585757;
 $purple-instagram: #a54cc0;
+
+:root {
+  --primary: #{$primary};
+  --primary-20: #{$primary-20};
+  --secondary: #{$secondary};
+  --background: #{$background};
+  --danger: #{$danger};
+  --text: #{$text};
+  --grey: #{$grey};
+  --grey-20: #{$grey-20};
+  --grey-40: #{$grey-40};
+  --black: #{$black};
+  --border: #{$border};
+  --shadow: #{$shadow};
+  --dark-bg: #{$dark-bg};
+  --highlight: #{$highlight};
+  --highlight-hover: #{$highlight-hover};
+  --light-blue: #{$light-blue};
+  --grey-twitter: #{$grey-twitter};
+  --purple-instagram: #{$purple-instagram};
+}
 
 body {
   margin: 0;
@@ -34,11 +57,11 @@ main {
 }
 
 .main {
-  background-color: $background;
+  background-color: var(--background);
   width: 95%;
   height: 95%;
   padding: 20px;
-  border: 6px solid $grey-20;
+  border: 6px solid var(--grey-20);
   border-radius: 12px;
 
   h2 {
@@ -46,7 +69,7 @@ main {
     text-align: center;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 1px solid $grey-40;
+    border-bottom: 1px solid var(--grey-40);
   }
 
   h3 {
@@ -61,7 +84,7 @@ main {
     justify-content: space-around;
 
     .border {
-      border: 1px solid $grey-40;
+      border: 1px solid var(--grey-40);
     }
 
     div {
@@ -76,9 +99,9 @@ main {
 
 .form-container {
   margin: auto;
-  background-color: $background;
+  background-color: var(--background);
   padding: 30px;
-  box-shadow: 0 0 10px $shadow;
+  box-shadow: 0 0 10px var(--shadow);
   border-radius: 10px;
   width: 100%;
   max-width: 500px;
@@ -133,7 +156,7 @@ main {
   input {
     width: 100%;
     padding: 10px;
-    border: 1px solid $border;
+    border: 1px solid var(--border);
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
@@ -142,7 +165,7 @@ main {
   button {
     width: 100%;
     padding: 10px;
-    background-color: $primary;
+    background-color: var(--primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -150,7 +173,7 @@ main {
     cursor: pointer;
 
     &:hover {
-      background-color: $primary-20;
+      background-color: var(--primary-20);
     }
   }
 }
@@ -161,7 +184,7 @@ main {
   transition: color 0.3s;
 
   &:hover {
-    color: $highlight-hover;
+    color: var(--highlight-hover);
   }
 }
 
@@ -178,7 +201,7 @@ main {
 }
 
 .error-principal {
-  background-color: $background;
+  background-color: var(--background);
   margin: 30px;
   padding: 5px 20px 18%;
   border-radius: 15px;
@@ -186,7 +209,7 @@ main {
 
 .error-code {
   font-size: 40px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--black);
 
   h1 {
     margin-left: 40px;
@@ -217,8 +240,8 @@ h1, h2, h3, h4, p, a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $dark-bg;
-  border-bottom: solid 3px black;
+  background-color: var(--dark-bg);
+  border-bottom: solid 3px var(--black);
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -227,7 +250,7 @@ h1, h2, h3, h4, p, a {
   z-index: 1000;
 
   a {
-    color: white;
+    color: var(--text);
     margin-left: 10px;
     text-decoration: none;
   }
@@ -245,12 +268,12 @@ h1, h2, h3, h4, p, a {
   }
 
   a {
-    color: white;
+    color: var(--text);
     text-decoration: none;
     transition: color 0.3s;
 
     &:hover {
-      color: $highlight-hover;
+      color: var(--highlight-hover);
     }
   }
 }
@@ -264,10 +287,10 @@ h1, h2, h3, h4, p, a {
 }
 
 footer {
-  background-color: $dark-bg;
-  color: white;
+  background-color: var(--dark-bg);
+  color: var(--text);
   padding: 10px 20px;
-  border-top: solid 3px black;
+  border-top: solid 3px var(--black);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -295,12 +318,12 @@ footer {
       margin-bottom: 8px;
 
       a {
-        color: white;
+        color: var(--text);
         text-decoration: none;
         transition: color 0.3s;
 
         &:hover {
-          color: $highlight-hover;
+          color: var(--highlight-hover);
         }
       }
     }
@@ -311,17 +334,17 @@ footer {
   text-align: center;
   font-size: 14px;
   padding-top: 20px;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--secondary);
 }
 
 .facebook a:hover {
-  color: $light-blue;
+  color: var(--light-blue);
 }
 
 .twitter a:hover {
-  color: $grey-twitter;
+  color: var(--grey-twitter);
 }
 
 .instagram a:hover {
-  color: $purple-instagram;
+  color: var(--purple-instagram);
 }
