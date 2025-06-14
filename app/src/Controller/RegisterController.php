@@ -17,7 +17,7 @@ class RegisterController {
         }
 
         try {
-            if($_SERVER['REQUEST_METHOD'] === 'POST')
+            if($_SERVER['REQUEST_METHOD'] !== 'POST')
                 throw new Exception("Metodo de requisição invalido", 1);
 
             $name = trim($_POST['name'] ?? '');

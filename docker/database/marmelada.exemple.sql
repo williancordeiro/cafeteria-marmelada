@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     user_name VARCHAR(32),
     user_email VARCHAR(32),
-    user_password VARCHAR(64)
+    user_pass VARCHAR(64)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS itens(
