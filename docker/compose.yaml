@@ -36,4 +36,5 @@ networks:
     driver: bridge
 
 volumes:
-  mariadbdata
+  mariadbdata:
+    driver: local
