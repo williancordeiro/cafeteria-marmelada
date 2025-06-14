@@ -12,9 +12,9 @@ class RegisterController {
 
     public function register() {
 
-        if (session_status() === PHP_SESSION_NONE) {
+        /*if (session_status() === PHP_SESSION_NONE) {
             session_start();
-        }
+        }*/
 
         try {
             if($_SERVER['REQUEST_METHOD'] !== 'POST')
