@@ -4,6 +4,8 @@
   --secondary: #ffffff;
   --background: #ffffff;
   --background-20: #e2e2e2;
+  --transparent: rgba(255, 255, 255, 0.575);
+  --transparent-20: rgba(255, 255, 255, 0.2);
   --danger: #ff0000;
   --warning: #f0c14b;
   --warning-20: #e0b343;
@@ -406,39 +408,56 @@ footer {
   max-height: 420px;
   overflow-y: auto;
 }
-
 .table-scroll table {
   width: 100%;
   border-collapse: collapse;
 }
 
+/*.table-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+}*/
 .item-table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--background);
   color: var(--grey-60);
 }
-
-.item-table th,
-.item-table td {
+.item-table th, .item-table tr {
   padding: 12px;
   text-align: left;
   border: 1px solid var(--border);
 }
-
 .item-table th {
   background-color: var(--background-20);
   font-weight: bold;
 }
-
 .item-table td {
   vertical-align: middle;
 }
-
 .item-table tr:hover {
   background-color: var(--background-20);
 }
 
+/*.item-table th,
+.item-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+.item-table th {
+    background-color: var(--background-20);
+    font-weight: bold;
+}
+
+.item-table td {
+    vertical-align: middle;
+}
+
+.item-table tr:hover {
+    background-color: var(--background-20);
+}*/
 .actions {
   display: flex;
   gap: 10px;
@@ -451,6 +470,19 @@ footer {
   justify-content: flex-end;
   margin-bottom: 10px;
 }
+.add-btn-wrapper .add-btn {
+  background-color: var(--blue);
+  color: var(--text);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.add-btn-wrapper .add-btn:hover {
+  background-color: var(--blue-20);
+}
 
 .add-btn {
   background-color: var(--blue);
@@ -462,11 +494,13 @@ footer {
   font-weight: bold;
   transition: background-color 0.3s;
 }
-
 .add-btn:hover {
   background-color: var(--blue-20);
 }
 
+/*.add-btn:hover {
+    background-color: var(--blue-20);
+}*/
 .edit-btn,
 .delete-btn {
   padding: 8px 12px;
@@ -482,20 +516,24 @@ footer {
   background-color: var(--warning);
   color: var(--grey-60);
 }
-
 .edit-btn:hover {
   background-color: var(--warning-20);
 }
 
+/*.edit-btn:hover {
+    background-color: var(--warning-20);
+}*/
 .delete-btn {
   background-color: var(--orange);
   color: var(--text);
 }
-
 .delete-btn:hover {
   background-color: var(--orange-20);
 }
 
+/*.delete-btn:hover {
+    background-color: var(--orange-20);
+}*/
 .item-list {
   display: flex;
   justify-content: center;
@@ -503,16 +541,14 @@ footer {
   padding: 100px 20px;
   box-sizing: border-box;
 }
-
-.item-scroll {
+.item-list .item-scroll {
   max-width: 390vh;
   overflow-y: auto;
-  background-color: var(--grey-20);
-  border: 3px solid var(--grey-20);
+  background-color: var(--transparent);
+  border: 3px solid var(--transparent);
   border-radius: 9px;
 }
-
-.item {
+.item-list .item-scroll .item {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -521,6 +557,21 @@ footer {
   border-radius: 9px;
 }
 
+/*.item-scroll {
+    max-width: 390vh;
+    overflow-y: auto;
+    background-color: var(--transparent);
+    border: 3px solid var(--transparent);
+    border-radius: 9px;
+}*/
+/*.item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 9px;
+}*/
 .card-item {
   background-color: var(--background);
   border-radius: 9px;
@@ -532,19 +583,16 @@ footer {
   padding: 1rem;
   height: 21rem;
 }
-
 .card-item:hover {
   transform: scale(1.05);
 }
-
-.item-content {
+.card-item .item-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
 }
-
-.item-img {
+.card-item .item-content .item-img {
   width: 20vh;
   height: 20vh;
   background-color: var(--background-20);
@@ -553,25 +601,20 @@ footer {
   object-fit: contain;
   margin-bottom: 0.5rem;
 }
-
-.item-details {
+.card-item .item-content .item-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.card-item .item-content .item-details {
   display: flex;
   justify-content: space-between;
   margin-right: 10px;
   width: 100%;
   font-size: 0.9rem;
 }
-
-.item-name {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.7rem;
-  text-align: center;
-  /* padding: 100%;
-  border: 1px solid rgb(194, 194, 194); */
-}
-
-.item-price, .item-quantity {
+.card-item .item-content .item-details .item-price, .card-item .item-content .item-details .item-quantity {
   font-weight: bold;
   font-size: 1rem;
   display: flex;
@@ -579,11 +622,57 @@ footer {
   text-align: center;
   /* border: 1px solid rgb(194, 194, 194); */
 }
-
-.item-price span, .item-quantity span {
+.card-item .item-content .item-details .item-price span, .card-item .item-content .item-details .item-quantity span {
   font-weight: normal;
 }
 
+/*.card-item:hover {
+    transform: scale(1.05);
+}*/
+/*.item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.item-img {
+    width: 20vh;
+    height: 20vh;
+    background-color: var(--background-20);
+    padding: 10px;
+    border-radius: 30%;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}*/
+/*.item-details {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    //padding: 100%;
+    //border: 1px solid rgb(194, 194, 194);
+}*/
+/*.item-price, .item-quantity {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    //border: 1px solid rgb(194, 194, 194);
+}
+
+.item-price span, .item-quantity span {
+    font-weight: normal;
+}*/
 @media (min-width: 320px) and (max-width: 425px) {
   .site-name {
     font-size: 16px;

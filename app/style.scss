@@ -4,6 +4,8 @@ $primary-20: #b38410;
 $secondary: #ffffff;
 $background: #ffffff;
 $background-20: #e2e2e2;
+$transparent: rgba(255, 255, 255, 0.575);
+$transparent-20: rgba(255, 255, 255, 0.2);
 $danger: #ff0000;
 $warning: #f0c14b;
 $warning-20: #e0b343;
@@ -32,6 +34,8 @@ $purple-instagram: #a54cc0;
   --secondary: #{$secondary};
   --background: #{$background};
   --background-20: #{$background-20};
+  --transparent: #{$transparent};
+  --transparent-20: #{$transparent-20};
   --danger: #{$danger};
   --warning: #{$warning};
   --warning-20: #{$warning-20};
@@ -467,21 +471,45 @@ footer {
 .table-scroll {
     max-height: 420px;
     overflow-y: auto;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 }
 
-.table-scroll table {
+/*.table-scroll table {
     width: 100%;
     border-collapse: collapse;
-}
+}*/
 
 .item-table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--background);
     color: var(--grey-60);
+
+    th, tr {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    th {
+        background-color: var(--background-20);
+        font-weight: bold;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    tr:hover {
+        background-color: var(--background-20);
+    }
 }
 
-.item-table th,
+/*.item-table th,
 .item-table td {
     padding: 12px;
     text-align: left;
@@ -499,7 +527,7 @@ footer {
 
 .item-table tr:hover {
     background-color: var(--background-20);
-}
+}*/
 
 .actions {
     display: flex;
@@ -512,6 +540,21 @@ footer {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
+
+    .add-btn {
+      background-color: var(--blue);
+      color: var(--text);
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--blue-20);
+      }
+    }
 }
 
 .add-btn {
@@ -523,11 +566,15 @@ footer {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--blue-20);
+    }
 }
 
-.add-btn:hover {
+/*.add-btn:hover {
     background-color: var(--blue-20);
-}
+}*/
 
 .edit-btn,
 .delete-btn {
@@ -543,20 +590,28 @@ footer {
 .edit-btn {
     background-color: var(--warning);
     color: var(--grey-60);
+
+    &:hover {
+      background-color: var(--warning-20);
+    }
 }
 
-.edit-btn:hover {
+/*.edit-btn:hover {
     background-color: var(--warning-20);
-}
+}*/
 
 .delete-btn {
     background-color: var(--orange);
     color: var(--text);
+
+    &:hover {
+      background-color: var(--orange-20);
+    }
 }
 
-.delete-btn:hover {
+/*.delete-btn:hover {
     background-color: var(--orange-20);
-}
+}*/
 
 .item-list {
     display: flex;
@@ -564,24 +619,41 @@ footer {
     width: 100%;
     padding: 100px 20px;
     box-sizing: border-box;
+
+    .item-scroll {
+      max-width: 390vh;
+      overflow-y: auto;
+      background-color: var(--transparent);
+      border: 3px solid var(--transparent);
+      border-radius: 9px;
+
+      .item {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+        border-radius: 9px;
+      }
+    }
 }
 
-.item-scroll {
+/*.item-scroll {
     max-width: 390vh;
     overflow-y: auto;
-    background-color: var(--grey-20);
-    border: 3px solid var(--grey-20);
+    background-color: var(--transparent);
+    border: 3px solid var(--transparent);
     border-radius: 9px;
-}
+}*/
 
-.item {
+/*.item {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     padding: 2rem;
     border-radius: 9px;
-}
+}*/
 
 .card-item {
     background-color: var(--background);
@@ -593,13 +665,64 @@ footer {
     align-items: center;
     padding: 1rem;
     height: 21rem;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+
+      .item-img {
+        width: 20vh;
+        height: 20vh;
+        background-color: var(--background-20);
+        padding: 10px;
+        border-radius: 30%;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+      }
+
+      .item-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.7rem;
+        text-align: center;
+        //padding: 100%;
+        //border: 1px solid rgb(194, 194, 194);
+      }
+
+      .item-details {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10px;
+        width: 100%;
+        font-size: 0.9rem;
+
+        .item-price, .item-quantity {
+          font-weight: bold;
+          font-size: 1rem;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          /* border: 1px solid rgb(194, 194, 194); */
+        }
+
+        .item-price span, .item-quantity span {
+            font-weight: normal;
+        }
+      }
+    }
 }
 
-.card-item:hover {
+/*.card-item:hover {
     transform: scale(1.05);
-}
+}*/
 
-.item-content {
+/*.item-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -614,9 +737,9 @@ footer {
     border-radius: 30%;
     object-fit: contain;
     margin-bottom: 0.5rem;
-}
+}*/
 
-.item-details {
+/*.item-details {
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
@@ -629,22 +752,22 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 0.7rem;
     text-align: center;
-    /* padding: 100%;
-    border: 1px solid rgb(194, 194, 194); */
-}
+    //padding: 100%;
+    //border: 1px solid rgb(194, 194, 194);
+}*/
 
-.item-price, .item-quantity {
+/*.item-price, .item-quantity {
     font-weight: bold;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* border: 1px solid rgb(194, 194, 194); */
+    //border: 1px solid rgb(194, 194, 194);
 }
 
 .item-price span, .item-quantity span {
     font-weight: normal;
-}
+}*/
 
 @media (min-width: 320px) and (max-width: 425px) {
     .site-name {
